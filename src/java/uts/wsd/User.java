@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
 public class User implements Serializable {
+
     @XmlElement(name = "email")
     private String email;
     @XmlElement(name = "name")
@@ -79,6 +80,5 @@ public class User implements Serializable {
     public void setFavouriteColour(String favouriteColour) {
         this.favouriteColour = favouriteColour;
     }
-    
-    
+
 }
