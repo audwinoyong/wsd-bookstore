@@ -25,7 +25,12 @@
     <xsl:template match="bookstore/bookslist">
         <table>
             <thead>
-                <tr><th>Title</th><th>Time</th><th>Rating</th></tr>
+                <tr>
+                    <th>No.</th>
+                    <th>Book title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                </tr>
             </thead>
             <tbody>
                 <xsl:apply-templates/>
