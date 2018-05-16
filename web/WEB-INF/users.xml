@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
     <user>
-        <email>ryan@ryanheise.com</email>
-        <name>Ryan Heise</name>
-        <password>blahblah</password>
-        <gender>male</gender>
-        <favouriteColour>green</favouriteColour>
+        <email>leesungrin1@gmail.com</email>
+        <name>Sung Rin Rhee</name>
+        <password>asdf1234</password>
     </user>
     <user>
-        <email>joe@bloggs.com</email>
-        <name>Joe Bloggs</name>
-        <password>foobar</password>
-        <gender>male</gender>
-        <favouriteColour>yellow</favouriteColour>
+        <email>audwinoyong@live.com</email>
+        <name>Audwin Oyong</name>
+        <password>#1Foofoo</password>
     </user>
+    <user>
+        <email>roanld@bloggs.com</email>
+        <name>Ronald Botleroo</name>
+        <password>foobar</password>
+    </user>    
 </users>
