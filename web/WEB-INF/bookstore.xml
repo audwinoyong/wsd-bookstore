@@ -1,7 +1,9 @@
-<bookstore xmlns="http://www.uts.edu.au/31284/wsd-diary"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-diary bookstore.xsd">
-    
+<?xml-stylesheet type="text/xsl" href="bookstore.xsl"?>
+<bookstore
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.test.com"
+    elementFormDefault="qualified">
+    <name>Bookstore</name>
     <bookslist>
         <books>
             <booksId>1</booksId>
@@ -12,7 +14,7 @@
             <booklist>
                <book>
                    <bookId>1</bookId>
-                   <title>Good mates</title>
+                   <booktitle>Good mates</booktitle>
                    <author>Author Choi</author>
                    <category>Science fiction</category>
                    <condition>New</condition>
@@ -38,7 +40,7 @@
             <booklist>
                <book>
                    <bookId>1</bookId>
-                   <title>Romeo and Juliet</title>
+                   <booktitle>Romeo and Juliet</booktitle>
                    <author>Author Choi</author>
                    <category>Science fiction</category>
                    <condition>New</condition>

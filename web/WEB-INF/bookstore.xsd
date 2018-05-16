@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xs:schema
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://www.uts.edu.au/31284/wsd-diary"
-    xmlns="http://www.uts.edu.au/31284/wsd-diary"
-    elementFormDefault="qualified">
+    targetNamespace="http://www.test.com"
+    elementFormDefault="qualified">>
 
     <!-- Type declarations -->  
     <xs:simpleType name="id">
@@ -70,6 +70,7 @@
     <xs:element name="bookstore">
         <xs:complexType mixed="true">
             <xs:sequence>
+                <xs:element name="name" type="xs:string" />
                 <xs:element name="bookslist">
                     <xs:complexType mixed="true">
                         <xs:sequence>
@@ -87,7 +88,7 @@
                                                         <xs:complexType mixed="true">
                                                             <xs:sequence>
                                                                 <xs:element name="bookId" type="id"/>
-                                                                <xs:element name="title" type="title"/>
+                                                                <xs:element name="booktitle" type="title"/>
                                                                 <xs:element name="author" type="author"/>
                                                                 <xs:element name="category" type="category"/>
                                                                 <xs:element name="condition" type="condition"/>
