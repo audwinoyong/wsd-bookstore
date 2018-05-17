@@ -1,10 +1,10 @@
 <%-- 
-    Document   : loginAction
-    Created on : 09/05/2018, 6:37:36 PM
-    Author     : Dalley
+    Document   : loginRedirect
+    Created on : 17/05/2018, 11:05:26 AM
+    Author     : Audwin
 --%>
 
-<%@page import="thunderSeller.*"%>
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,14 +22,14 @@
     </head> 
     <body>
         <% String filePath = application.getRealPath("WEB-INF/users.xml");%>
-        <jsp:useBean id="thunderSeller" class="thunderSeller.thunderSellerApplication" scope="application">
+        <jsp:useBean id="diaryApp" class="uts.wsd.DiaryApplication" scope="application">
             <jsp:setProperty name="thunderSeller" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
 
         <%
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            Users users = thunderSeller.getUsers();
+            Users users = diaryApp.getUsers();
             User verifyUser = users.login(email, password);
         %>
 

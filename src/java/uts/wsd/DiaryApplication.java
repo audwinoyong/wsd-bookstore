@@ -5,28 +5,15 @@
  */
 package uts.wsd;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.*;
+import javax.xml.bind.*;
 
 /**
  *
- * @author sungrinrhee
+ * @author Audwin
  */
+public class DiaryApplication implements Serializable {
 
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.PROPERTY)
-public class DiaryApplication {
-    
     private String filePath;
     private Users users;
 
@@ -34,27 +21,47 @@ public class DiaryApplication {
     }
 
     public DiaryApplication(String filePath, Users users) {
+        super();
         this.filePath = filePath;
         this.users = users;
     }
-    @XmlElement
+
     public String getFilePath() {
         return filePath;
     }
 
-    public void setFilePath(String filePath) throws FileNotFoundException, JAXBException, IOException {
-    // Create the unmarshaller
-    JAXBContext jc = JAXBContext.newInstance(Users.class);
-    Unmarshaller u = jc.createUnmarshaller();
-
-    this.filePath = filePath;
-    // Now unmarshal the object from the file
-    FileInputStream fin = new FileInputStream(filePath);
-    users = (Users)u.unmarshal(fin); // This loads the "shop" object
-    fin.close();
+    public void setFilePath(String filePath) throws JAXBException, IOException {
+        // Create the unmarshaller
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Unmarshaller u = jc.createUnmarshaller();
+        this.filePath = filePath;
+        // Now unmarshal the object from the file
+        FileInputStream fin = new FileInputStream(filePath);
+        users = (Users) u.unmarshal(fin); // This loads the "users" object
+        fin.close();
     }
-    
-    @XmlElement
+
+    // save "users" object (Java) to users.xml file
+    public void updateXML(Users users, String filePath) throws JAXBException, IOException {
+        this.users = users;
+        this.filePath = filePath;
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(users, fout);
+        fout.close();
+    }
+
+    public void saveUsers() throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(users, fout);
+        fout.close();
+    }
+
     public Users getUsers() {
         return users;
     }
@@ -62,16 +69,5 @@ public class DiaryApplication {
     public void setUsers(Users users) {
         this.users = users;
     }
-    
-    public void saveUsers() throws JAXBException, IOException {
-        JAXBContext jc = JAXBContext.newInstance(Users.class);
-        Marshaller m = jc.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-        FileOutputStream fout = new FileOutputStream(filePath);
-        m.marshal(users, fout);
-        fout.close();
-    }
-    
-    
-    
+
 }

@@ -1,7 +1,7 @@
 <%-- 
-    Document   : test
-    Created on : May 8, 2018, 12:03:36 PM
-    Author     : Dalley
+    Document   : login
+    Created on : 17/05/2018, 11:05:00 AM
+    Author     : Audwin
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,7 +35,7 @@
                 <!-- Login Form -->
                 <form method="POST" action="loginRedirect.jsp">
                     <div class="form-group">
-                        <label for="email">E-Mail Address</label>
+                        <label for="email">Email Address</label>
                         <input id="email" type="email" class="form-control" name="email" value="" required="" autofocus="">
                     </div>
                     

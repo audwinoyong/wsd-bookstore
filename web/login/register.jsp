@@ -1,11 +1,11 @@
 <%-- 
     Document   : register
-    Created on : 09/05/2018, 1:38:00 PM
-    Author     : Dalley
+    Created on : 17/05/2018, 11:05:42 AM
+    Author     : Audwin
 --%>
 
-<%@page import="thunderSeller.User"%>
-<%@page import="thunderSeller.Users"%>
+<%@page import="uts.wsd.User"%>
+<%@page import="uts.wsd.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

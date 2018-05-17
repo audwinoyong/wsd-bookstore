@@ -1,10 +1,10 @@
 <%-- 
-    Document   : loginRedirect
-    Created on : 12/05/2018, 6:40:10 PM
-    Author     : Dalley
+    Document   : registerRedirect
+    Created on : 17/05/2018, 11:06:16 AM
+    Author     : Audwin
 --%>
 
-<%@page import="thunderSeller.*"%>
+<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -31,12 +31,12 @@
                 String filePath = application.getRealPath("WEB-INF/users.xml");
         %>
 
-        <jsp:useBean id="thunderSellerApp" class="thunderSeller.thunderSellerApplication" scope="application">
+        <jsp:useBean id="diaryApp" class="uts.wsd.DiaryApplication" scope="application">
             <jsp:setProperty name="thunderSellerApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
 
         <%
-            Users users = thunderSellerApp.getUsers();
+            Users users = diaryApp.getUsers();
 
             boolean valid = users.getUser(email) == null;
 
@@ -44,7 +44,7 @@
                 User user = new User(name, email, password);
                 session.setAttribute("user", user);
                 users.addUser(user);
-                thunderSellerApp.updateXML(users, filePath);
+                diaryApp.updateXML(users, filePath);
         %>
 
         <script>

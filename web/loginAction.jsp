@@ -43,6 +43,7 @@
 //                session.setAttribute("user", user);
             
             if (user != null) {
+                session.setAttribute("user", user);
         %>
                 <p>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
             <% } else { %>
