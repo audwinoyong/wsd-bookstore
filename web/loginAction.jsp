@@ -30,20 +30,20 @@
             User user = users.login(email, password);
         %>
         <%
-//            if (validator.checkEmpty(email, password)) {
-//                session.setAttribute("emptyError", "All fields are mandatory");
-//                response.sendRedirect("login.jsp");
-//            } else if (!validator.validateEmail(email)){
-//                session.setAttribute("emailError", "Incorrect email format");
-//                response.sendRedirect("login.jsp");
-//            } else if (!validator.validatePassword(password)) {
-//                session.setAttribute("passwordError", "Incorrect password format");
-//                response.sendRedirect("login.jsp");
-//            } else if (user != null) {
-//                session.setAttribute("user", user);
-            
-            if (user != null) {
+            if (validator.checkEmpty(email, password)) {
+                session.setAttribute("emptyError", "All fields are mandatory");
+                response.sendRedirect("login.jsp");
+            } else if (!validator.validateEmail(email)){
+                session.setAttribute("emailError", "Incorrect email format");
+                response.sendRedirect("login.jsp");
+            } else if (!validator.validatePassword(password)) {
+                session.setAttribute("passwordError", "Incorrect password format");
+                response.sendRedirect("login.jsp");
+            } else if (user != null) {
                 session.setAttribute("user", user);
+//                response.sendRedirect("index.jsp");
+//            if (user != null) {
+//                session.setAttribute("user", user);
         %>
                 <p>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
             <% } else { %>

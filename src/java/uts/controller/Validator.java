@@ -18,7 +18,8 @@ public class Validator implements Serializable {
     // 
     private String emailPattern = "[a-zA-Z\\._]+@[a-z\\-]+(\\.[a-z\\-]+)+";
     private String namePattern = "[A-Z][a-zA-Z]*(\\s[A-Z][a-zA-Z]*)*";
-    private String passwordPattern = "[a-z]{6,}[0-9]+";
+//    private String passwordPattern = "[a-z]{6,}[0-9]+";
+    private String passwordPattern = "[a-zA-Z0-9]+";
     private HashMap<String, String> errors;
     
     public Validator() {

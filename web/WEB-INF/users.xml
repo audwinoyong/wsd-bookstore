@@ -6,12 +6,12 @@
         <password>asdf1234</password>
     </user>
     <user>
-        <email>audwinoyong@live.com</email>
+        <email>audwin@live.com</email>
         <name>Audwin Oyong</name>
-        <password>#1Foofoo</password>
+        <password>foofoo</password>
     </user>
     <user>
-        <email>roanld@bloggs.com</email>
+        <email>ronald@bloggs.com</email>
         <name>Ronald Botleroo</name>
         <password>foobar</password>
     </user>    

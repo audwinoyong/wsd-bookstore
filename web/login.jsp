@@ -4,6 +4,7 @@
     Author     : Audwin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,10 +19,11 @@
     %>
     <body>
         <h1>Login</h1>
+        <p>Enter details to login: <c:if test="${emptyError != null}"> <c:out value="${emptyError}"/></c:if></p>
         <form action="loginAction.jsp" method="POST">
             <table>
-                <tr><td>Email</td><td><input type="text" name="email"></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+                <tr><td>Email</td><td><input type="text" name="email"> <c:if test="${emailError != null}"> <c:out value="${emailError}"/></c:if></td></tr>
+                <tr><td>Password</td><td><input type="password" name="password"> <c:if test="${passwordError != null}"> <c:out value="${passwordError}"/></c:if></td></tr>
                 <tr><td></td><td><input type="submit" value="Login"></td></tr>
             </table>
         </form>
