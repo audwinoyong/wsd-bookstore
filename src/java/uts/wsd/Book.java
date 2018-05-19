@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Book implements Serializable {
 
-    private static final AtomicInteger count = new AtomicInteger(0); 
+    private static AtomicInteger count = new AtomicInteger(5); 
     @XmlElement(name = "bookId")
     private int bookId;
     @XmlElement(name = "booktitle")
@@ -47,8 +47,8 @@ public class Book implements Serializable {
     public Book() {
     }
 
-    public Book(int bookId, String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst, String availablilty) {
-        this.bookId = bookId;
+    public Book(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
+        this.bookId = count.getAndIncrement();
         this.booktitle = booktitle;
         this.author = author;
         this.category = category;
@@ -58,7 +58,7 @@ public class Book implements Serializable {
         this.publisher = publisher;
         this.username = username;
         this.abst = abst;
-        this.availablilty = availablilty;
+        this.availablilty = "Available";
     }
 
     public int getBookId() {

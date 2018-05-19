@@ -32,11 +32,19 @@ public class Books implements Serializable {
     public Book getBook(String username) {
         for (Book book : list) {
             if (book.getUsername().equals(username)) {
-                return book; //the email is not registered yet.
+                return book; 
             }
         }
         return null;
     }
+    public Book getBookByBookId(int bookId) {
+        for (Book book : list) {
+            if (book.getBookId()==bookId) {
+                return book; 
+            }
+        }
+        return null;
+    }    
         // function to get book with maching title
     public Book getBookByTitle(String title) {
         for (Book book : list) {

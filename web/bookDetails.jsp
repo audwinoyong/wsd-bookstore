@@ -19,6 +19,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book Details</title>
+        <script>
+        function goBack() {
+            window.history.back();
+        }
+        </script>        
     </head>
     <body>
 <% String filePath = application.getRealPath("WEB-INF/books.xml");
@@ -73,6 +78,8 @@
         <c:import url="WEB-INF/bookdetail.xsl" var="stylesheet" />
         <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
         </x:transform>
+        <button onclick="goBack()">Go Back</button>
+        
              
         
     </body>

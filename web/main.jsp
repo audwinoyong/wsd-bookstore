@@ -12,7 +12,7 @@
 <%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <% String filePath = application.getRealPath("WEB-INF/books.xml");
    String resultPath = application.getRealPath("WEB-INF/result.xml");%>
-   <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="application">
+   <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="page">
        <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
    </jsp:useBean>
    <%
@@ -23,7 +23,7 @@
         Books results = books.getBooksList(books);   
 
      
-        bookApp.updateXML(results, resultPath);   
+        bookApp.updateXML(results, resultPath);
     %>   
 <html>
     <head>

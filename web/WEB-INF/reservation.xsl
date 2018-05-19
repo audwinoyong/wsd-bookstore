@@ -1,27 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<!--
-    Document   : reservation.xsl
-    Created on : May 19, 2018, 2:48 PM
-    Author     : sungrinrhee
-    Description:
-        Purpose of transformation follows.
--->
-
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">                
     <xsl:output method="html"/>
-
-    <!-- TODO customize transformation rules 
-         syntax recommendation http://www.w3.org/TR/xslt 
-    -->
     <xsl:template match="/">
         <html>
-            <head>
-                <title>reservation.xsl</title>
-            </head>
             <body>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book Id</th>
+                            <th>Book title</th>
+                            <th>Username</th>
+                            <th>User Email</th>                                                   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:apply-templates/>                       
+                    </tbody>
+                </table>
             </body>
         </html>
+    </xsl:template>
+
+    <xsl:template match="reservation">    
+        <tr>
+            <td><xsl:value-of select="bookId"/></td>
+            <td><xsl:value-of select="booktitle"/></td>
+            <td><xsl:value-of select="username"/></td>
+            <td><xsl:value-of select="email"/></td>
+        </tr>  
     </xsl:template>
 
 </xsl:stylesheet>

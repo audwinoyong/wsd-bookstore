@@ -28,8 +28,11 @@
         </html>
     </xsl:template>
 
-    <xsl:template match="book">
-        <xsl:variable name="href">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>     
+    <xsl:template match="book">   
+       <xsl:variable name="status" select="availablilty"/>
+        <xsl:variable name="href1">reservationForm.jsp?bookId=<xsl:value-of select="bookId"/>&amp;booktitle=<xsl:value-of select="booktitle"/></xsl:variable>     
+        <xsl:variable name="href2">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>     
+       
         <tr>
             <td><xsl:value-of select="booktitle"/></td>
             <td><xsl:value-of select="author"/></td>
@@ -40,7 +43,14 @@
             <td><xsl:value-of select="publisher"/></td>
             <td><xsl:value-of select="username"/></td>
             <td><xsl:value-of select="abstract"/></td>
-            <td><a href="{$href}"><xsl:value-of select="availablilty"/></a></td>
+            <xsl:choose>
+                 <xsl:when test="$status = 'Available'">
+                     <td><a href="{$href1}"><xsl:value-of select="availablilty"/></a></td>
+                 </xsl:when>
+                 <xsl:otherwise>
+                     <td><a href="{$href2}"><xsl:value-of select="availablilty"/></a></td>                     
+                 </xsl:otherwise>
+             </xsl:choose>            
         </tr>  
     </xsl:template>
 

@@ -6,6 +6,7 @@
 package uts.wsd;
 
 import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,28 +19,32 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Reservation implements Serializable {
 
+    @XmlElement(name = "bookId")
+    private int bookId;    
     @XmlElement(name = "booktitle")
     private String booktitle;
     @XmlElement(name = "username")
-    private String username;
-    @XmlElement(name = "userEmail")
-    private String userEmail;
+    private String username;    
+    @XmlElement(name = "email")
+    private String email;
+        
     
     public Reservation() {
     }
 
-    public Reservation(String booktitle, String username, String userEmail) {
+    public Reservation(int bookId, String booktitle, String username, String email) {
+        this.bookId = bookId;
         this.booktitle = booktitle;
         this.username = username;
-        this.userEmail = userEmail;
+        this.email = email;
     }
 
-    public String getBooktitle() {
-        return booktitle;
+    public int getBookId() {
+        return bookId;
     }
 
-    public void setBooktitle(String booktitle) {
-        this.booktitle = booktitle;
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
     public String getUsername() {
@@ -50,13 +55,22 @@ public class Reservation implements Serializable {
         this.username = username;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getBooktitle() {
+        return booktitle;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setBooktitle(String booktitle) {
+        this.booktitle = booktitle;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
 
 }
