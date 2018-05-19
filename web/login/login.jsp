@@ -4,13 +4,14 @@
     Author     : Audwin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Signin Page</title>
+        <title>Login Page</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="css/my-login.css">
@@ -18,35 +19,46 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
-
-
-
-    </head> 
+        
+    </head>
+    
+    <%
+        String emptyError = request.getParameter("emptyError");
+        String emailError = request.getParameter("emailError");
+        String passwordError = request.getParameter("passwordError");
+    %>
+    
     <body class="my-login-page">
     <center>
         <div class="container">
-            <a href="../main/mainpage.jsp"><img src="../assets/img/thunder_logo.png" alt="Thunder" id="logo" style="padding-top:20px;text-align:center"/></a>
+            <a href="index.jsp"><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="padding-top:20px; text-align:center"/></a>
 
             <!-- Header -->
             <div class="wrapper" style="width:500px; text-align: left">
-                <br/><h4 class="card-title font-weight-monospace">Sign in to Thunder Seller</h4>
-                <p class="font-weight-light">Enter your details below</p><br/>
+                <br/><h4 class="card-title font-weight-monospace">Sign in to WSD Bookstore</h4>
+                <p class="font-weight-light">Enter your details below: 
+                    <c:if test="${emptyError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 100px"><c:out value="${emptyError}"/></c:if></span>
+                </p><br/>
 
                 <!-- Login Form -->
-                <form method="POST" action="loginRedirect.jsp">
+                <form method="POST" action="loginAction.jsp">
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input id="email" type="email" class="form-control" name="email" value="" required="" autofocus="">
+                        <label for="email">Email Address
+                            <c:if test="${emailError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 220px"> <c:out value="${emailError}"/></c:if></span>
+                        </label>
+                        <input id="email" type="text" class="form-control" name="email" value="" autofocus="">
                     </div>
                     
                     <div class="form-group">
                         <label for="password">Password
-                            <a href="forgot.jsp" class="float-right font-weight-monospace text-muted" style="text-align:right; margin-left: 300px ">
+                            <c:if test="${passwordError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 222px"> <c:out value="${passwordError}"/></c:if></span>
+                            
+                            <!--<a href="forgot.jsp" class="float-right font-weight-monospace text-muted" style="text-align:right; margin-left: 300px ">
                                 Forgot Password?
-                            </a>
+                            </a>-->
                         </label>
 
-                        <div style="position:relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" required="" data-eye="">
+                        <div style="position:relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" data-eye="">
                         </div>
                     </div>
 
@@ -57,7 +69,7 @@
                         <input type="hidden" name="submitted" value="true">
                     </div>
                     <div class="margin-top20 text-center">
-                        Don't have an account? <a href="register.jsp" class="text-muted font-weight-light" data-toggle="">Create One</a>
+                        Don't have an account? <a href="register.jsp" class="text-muted font-weight-light" data-toggle="">Register</a>
                     </div>
                 </form>
             </div>

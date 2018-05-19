@@ -8,11 +8,11 @@
     <user>
         <email>audwin@live.com</email>
         <name>Audwin Oyong</name>
-        <password>foofoo</password>
+        <password>foofoofoo</password>
     </user>
     <user>
         <email>ronald@bloggs.com</email>
         <name>Ronald Botleroo</name>
-        <password>foobar</password>
-    </user>    
+        <password>foobarbar</password>
+    </user>
 </users>

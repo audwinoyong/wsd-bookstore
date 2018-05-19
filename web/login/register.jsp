@@ -21,14 +21,14 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
     </head>
-
+s
     <body class="my-register-page">
     <center>
         <div class="container">
             <!-- Header -->
-            <a href="../main/mainpage.jsp"><img src="../assets/img/thunder_logo.png" alt="Thunder" id="logo" style="padding-top:20px;text-align:center"/></a>
+            <a href="../main/mainpage.jsp"><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="padding-top:20px;text-align:center"/></a>
             <div class="wrapper" style="width:500px; text-align: left">
-                <br/><h4 class="card-title font-weight-monospace">Get started with Thunder Seller</h4><br>
+                <br/><h4 class="card-title font-weight-monospace">Get started with WSD Bookstore</h4><br>
 
                 <!-- Register Form -->
                 <form action="registerRedirect.jsp" method="POST">
@@ -37,7 +37,7 @@
                         <input id="name" type="text" class="form-control" name="name" value="" required="" autofocus="">
                     </div>
                     <div class="form-group">
-                        <label for="email">E-Mail Address</label>
+                        <label for="email">Email Address</label>
                         <input id="email" type="email" class="form-control" name="email" value="" required="" autofocus="">
                     </div>
                     <div class="form-group">
@@ -46,7 +46,7 @@
 
                         <div style="position:relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" required="" data-eye="">
                         </div>
-                    </div
+                    </div>
 
                     <div class="form-group no-margin">
                         <br><button type="submit" value="register" class="btn btn-danger btn-block" name="submit">Register</button>

@@ -18,10 +18,10 @@
         <%
             session.invalidate();
         %>
-            
+        
         <div>
-            <center><img src="../assets/img/mainpage_logo.png" alt="Thunder" id="logo" style="margin-top: 15px;"/></center><hr>
-            <p class="alert alert-danger"> You have been not logged out. Click <a href="../main/mainpage.jsp">here</a> to return to the main page.</p>
+            <!--<center><img src="../assets/img/mainpage_logo.png" alt="Thunder" id="logo" style="margin-top: 15px;"/></center><hr>-->
+            <p class="alert alert-danger">You have been logged out. Click <a href="../index.jsp">here</a> to return to the main page.</p>
         </div>
         
         
