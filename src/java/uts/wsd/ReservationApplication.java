@@ -8,18 +8,18 @@ package uts.wsd;
 import java.io.*;
 import javax.xml.bind.*;
 
-public class BookApplication implements Serializable {
+public class ReservationApplication implements Serializable {
 
     private String filePath;
-    private Books books;
+    private Reservations reservations;
 
-    public BookApplication() {
+    public ReservationApplication() {
     }
 
-    public BookApplication(String filePath, Books books) {
+    public ReservationApplication(String filePath, Reservations reservations) {
         super();
         this.filePath = filePath;
-        this.books = books;
+        this.reservations = reservations;
     }
 
     public String getFilePath() {
@@ -28,44 +28,44 @@ public class BookApplication implements Serializable {
 
     public void setFilePath(String filePath) throws JAXBException, IOException {
         // Create the unmarshaller
-        JAXBContext jc = JAXBContext.newInstance(Books.class);
+        JAXBContext jc = JAXBContext.newInstance(Reservations.class);
         Unmarshaller u = jc.createUnmarshaller();
         this.filePath = filePath;
         // Now unmarshal the object from the file
         FileInputStream fin = new FileInputStream(filePath);
-        books = (Books) u.unmarshal(fin); // This loads the "bookstore" object
+        reservations = (Reservations) u.unmarshal(fin); // This loads the "bookstore" object
         fin.close();
     }
 
     // save "books" object (Java) to books.xml file
-    public void updateXML(Books books, String filePath) throws JAXBException, IOException {
-        this.books = books;
+    public void updateXML(Reservations reservations, String filePath) throws JAXBException, IOException {
+        this.reservations = reservations;
         this.filePath = filePath;
-        JAXBContext jc = JAXBContext.newInstance(Books.class);
+        JAXBContext jc = JAXBContext.newInstance(Reservations.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(filePath);
-        m.marshal(books, fout);
+        m.marshal(reservations, fout);
         fout.close();
     }
 
-    public void saveBooks() throws JAXBException, IOException {
-        JAXBContext jc = JAXBContext.newInstance(Books.class);
+    public void saveReservations() throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Reservations.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fout = new FileOutputStream(filePath);
-        m.marshal(books, fout);
+        m.marshal(reservations, fout);
         fout.close();
     }
 
-    public Books getBooks() {
-        return books;
+    public Reservations getReservations() {
+        return reservations;
     }
     
     
 
-    public void setBookstore(Books books) {
-        this.books = books;
+    public void setReservation(Reservations reservations) {
+        this.reservations = reservations;
     }
 
 }

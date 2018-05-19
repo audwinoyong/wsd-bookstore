@@ -1,51 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:t="http://www.test.com" >
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">                
     <xsl:output method="html"/>
     <xsl:template match="/">
         <html>
-            <head>
-                
-            </head>
+            
             <body>
-                <xsl:apply-templates/>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:apply-templates/>                       
+                    </tbody>
+                </table>
             </body>
         </html>
     </xsl:template>
-   
-    <xsl:template match="bookstore">
-        <h1><xsl:apply-templates/></h1>
+  
+    <xsl:template match="book">
+        <xsl:variable name="href">bookDetails.jsp?booktitle=<xsl:value-of select="booktitle"/></xsl:variable>
+        <tr>
+            <td><a href ="{$href}"> <xsl:value-of select="booktitle"/></a></td>
+            
+            <td><xsl:value-of select="author"/></td>
+            <td><xsl:value-of select="category"/></td>
+        </tr>  
     </xsl:template>
-    
-    <xsl:template match="name">
-        <div> Name: <xsl:apply-templates/></div>
-    </xsl:template>
-    
-    <xsl:template match="bookstore/bookslist">
-        <table>
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Book title</th>
-                    <th>Author</th>
-                    <th>Category</th>
-                </tr>
-            </thead>
-            <tbody>
-                <xsl:apply-templates/>
-            </tbody>
-        </table>
-    </xsl:template>
-    <xsl:template match="books">
-        <tr> <xsl:apply-templates/></tr>
-    </xsl:template>
-    <xsl:template match="books/booksId|title|author|category">
-        <td><xsl:apply-templates/></td>
-    </xsl:template>
-    <xsl:template match="booklist" />
-
-
 
     
     

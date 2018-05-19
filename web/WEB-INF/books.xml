@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
+    <book>
+        <bookId>1</bookId>
+        <booktitle>Good mates</booktitle>
+        <author>Author Choi</author>
+        <category>Science fiction</category>
+        <condition>New</condition>
+        <isbn>1-23451-234-5</isbn>
+        <publishYear>2018</publishYear>
+        <publisher>Jimmy Rhee</publisher>
+        <username>kevin</username>
+        <abstract>Abstract is abstract.</abstract>
+        <availablilty>Available</availablilty>
+    </book>
+    <book>
+        <bookId>2</bookId>
+        <booktitle>Romeo and Juliet</booktitle>
+        <author>Author Choi</author>
+        <category>Science fiction</category>
+        <condition>New</condition>
+        <isbn>1-23451-234-5</isbn>
+        <publishYear>2018</publishYear>
+        <publisher>Jimmy Rhee</publisher>
+        <username>kevin</username>
+        <abstract>Abstract is abstract.</abstract>
+        <availablilty>Available</availablilty>
+    </book>
+    <book>
+        <bookId>3</bookId>
+        <booktitle>Romeo and Juliet</booktitle>
+        <author>Author Choi</author>
+        <category>Science fiction</category>
+        <condition>New</condition>
+        <isbn>1-23451-234-5</isbn>
+        <publishYear>2018</publishYear>
+        <publisher>Jimmy Rhee</publisher>
+        <username>kevin</username>
+        <abstract>Abstract is abstract.</abstract>
+        <availablilty>Available</availablilty>
+    </book>
+    <book>
+        <bookId>4</bookId>
+        <booktitle>Good mates</booktitle>
+        <author>Author Choi</author>
+        <category>Science fiction</category>
+        <condition>New</condition>
+        <isbn>1-23451-234-5</isbn>
+        <publishYear>2018</publishYear>
+        <publisher>Jimmy Rhee</publisher>
+        <username>jimmy</username>
+        <abstract>Abstract is abstract.</abstract>
+        <availablilty>Available</availablilty>
+    </book>
+    <book>
+        <bookId>5</bookId>
+        <booktitle>Triangle</booktitle>
+        <author>Author Choi</author>
+        <category>Science fiction</category>
+        <condition>New</condition>
+        <isbn>1-23451-234-5</isbn>
+        <publishYear>2018</publishYear>
+        <publisher>Jimmy Rhee</publisher>
+        <username>kevin</username>
+        <abstract>Abstract is abstract.</abstract>
+        <availablilty>Available</availablilty>
+    </book>
+</books>
