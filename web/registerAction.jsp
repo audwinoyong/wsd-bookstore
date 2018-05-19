@@ -21,6 +21,7 @@
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
+            String dob = request.getParameter("dob");
             String filePath = application.getRealPath("WEB-INF/users.xml");
     %>
 
@@ -45,9 +46,12 @@
         } else if (!validator.validPassword(password)) {
             session.setAttribute("passwordError", "[Incorrect password format]");
             response.sendRedirect("register.jsp");
+        } else if (!validator.validDob(dob)) {
+            session.setAttribute("dobError", "[Incorrect DOB format]");
+            response.sendRedirect("register.jsp");
         } else if (users.getUser(email) == null) {
 
-            User user = new User(name, email, password);
+            User user = new User(name, email, password, dob);
             session.setAttribute("user", user);
             users.addUser(user);
             diaryApp.updateXML(users, filePath);
@@ -57,6 +61,7 @@
             session.setAttribute("nameError", "");
             session.setAttribute("emailError", "");
             session.setAttribute("passwordError", "");
+            session.setAttribute("dobError", "");
     %>
 
     <body>

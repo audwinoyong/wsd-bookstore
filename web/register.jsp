@@ -21,6 +21,7 @@
         String nameError = request.getParameter("nameError");
         String emailError = request.getParameter("emailError");
         String passwordError = request.getParameter("passwordError");
+        String dobError = request.getParameter("dobError");
     %>
 
     <body class="my-register-page">
@@ -55,6 +56,14 @@
                         </label>
 
                         <div style="position:relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" data-eye="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth
+                            <c:if test="${dobError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 236px"> <c:out value="${dobError}"/></c:if></span>
+                        </label>
+
+                        <div style="position:relative"><input id="date" type="date" class="form-control font-weight-monospace" name="dob" data-eye="">
                         </div>
                     </div>
 
