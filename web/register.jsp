@@ -1,47 +1,94 @@
 <%-- 
     Document   : register
-    Created on : 16/03/2018, 10:50:20 PM
+    Created on : 17/05/2018, 11:05:42 AM
     Author     : Audwin
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.wsd.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Register</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Register Page</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" type="text/css" href="css/my-login.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
     </head>
-    <body>
-        <h1>Register</h1>
-        <form action="welcome.jsp" method="POST">
-            <table>
-                <tr><td>Email</td><td><input type="text" name="email"></td></tr>
-                <tr><td>Full name</td><td><input type="text" name="name"></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
-                <tr><td>Gender</td>
-                    <td>
-                        <input type="radio" name="gender" value="male">Male<br>
-                        <input type="radio" name="gender" value="female">Female<br>
-                    </td>
-                </tr>
 
-                <tr><td>Favourite colour</td>
-                    <td>
-                        <select name="favcol">
-                            <option value="red">Red</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
-                            <option value="yellow">Yellow</option>
-                            <option value="orange">Orange</option>
-                            <option value="pink">Pink</option>
-                        </select>
-                    </td>
-                </tr>
+    <%
+        String emptyError = request.getParameter("emptyError");
+        String nameError = request.getParameter("nameError");
+        String emailError = request.getParameter("emailError");
+        String passwordError = request.getParameter("passwordError");
+    %>
 
-                <tr><td>Agree to TOS</td><td><input type="checkbox" name="tos"></td></tr>
-                <tr><td></td><td><input type="submit" value="Register"></td></tr>
+    <body class="my-register-page">
+    <center>
+        <div class="container">
+            <a href="main.jsp"><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></a>
 
-            </table>
-        </form>
-    </body>
+            <!-- Header -->
+            <div class="wrapper" style="width:500px; text-align: left">
+                <br/><h4 class="card-title font-weight-monospace">Register into WSD Bookstore</h4>
+                <p class="font-weight-light">Enter your details below: 
+                    <c:if test="${emptyError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 100px"><c:out value="${emptyError}"/></c:if></span>
+                </p><br/>
+
+                <!-- Register Form -->
+                <form action="registerAction.jsp" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name
+                            <c:if test="${nameError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 276px"> <c:out value="${nameError}"/></c:if></span>
+                        </label>
+                        <input id="name" type="text" class="form-control" name="name" value="" autofocus="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address
+                            <c:if test="${emailError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 220px"> <c:out value="${emailError}"/></c:if></span>
+                        </label>
+                        <input id="email" type="text" class="form-control" name="email" value="" autofocus="">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password
+                            <c:if test="${passwordError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 222px"> <c:out value="${passwordError}"/></c:if></span>
+                        </label>
+
+                        <div style="position:relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" data-eye="">
+                        </div>
+                    </div>
+
+                    <div class="form-group no-margin">
+                        <br><button type="submit" value="register" class="btn btn-primary btn-block" name="submit">Register</button>
+                    </div>
+                    <input type="hidden" name="submitted" value="true"/>
+                </form>
+
+                <div class="margin-top20 text-center">
+                    Already have an account? <a href="login.jsp" class="text-muted font-weight-light" data-toggle="">Login</a>
+                </div>
+            </div>
+
+        </div>
+    </center>
+
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg>
+</body>
 </html>

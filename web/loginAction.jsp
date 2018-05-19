@@ -4,8 +4,8 @@
     Author     : Audwin
 --%>
 
-<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.wsd.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,12 +58,12 @@
         %>
         <div>
             <center><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></center><hr>
-            <p class="alert alert-success">Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
+            <p class="alert alert-success" style="text-align: center">Login successful. Click <a href="main.jsp">here</a> to return to the main page.</p>
         </div>
         
         <script>
             setTimeout(function () {
-                window.location = "index.jsp";
+                window.location = "main.jsp";
             }, 3000);
         </script>
         
@@ -78,7 +78,7 @@
         
         <div>
             <center><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></center><hr>
-            <p class="alert alert-danger"> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+            <p class="alert alert-danger" style="text-align: center"> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
         </div>
         <% } %>
         

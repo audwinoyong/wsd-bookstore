@@ -44,6 +44,10 @@ public class Validator implements Serializable {
         return match.matches();
     }
 
+    public boolean isEmpty(String name, String email, String password) {
+        return name.isEmpty() || email.isEmpty() || password.isEmpty();
+    }
+    
     public boolean isEmpty(String email, String password) {
         return email.isEmpty() || password.isEmpty();
     }

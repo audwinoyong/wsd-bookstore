@@ -19,14 +19,12 @@
             session.invalidate();
         %>
         
-        <div>
-            <!--<center><img src="../assets/img/mainpage_logo.png" alt="Thunder" id="logo" style="margin-top: 15px;"/></center><hr>-->
-            <p class="alert alert-danger">You have been logged out. Click <a href="index.jsp">here</a> to return to the main page.</p>
+        <div class="container">
+            <center><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></center><hr>
+            <p class="alert alert-danger" style="text-align: center">You have been logged out. Click <a href="main.jsp">here</a> to return to the main page.</p>
         </div>
         
-        
-     <!-- Bootstrap core JavaScript
-        ================================================== -->
+    <!-- Bootstrap core JavaScript ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
