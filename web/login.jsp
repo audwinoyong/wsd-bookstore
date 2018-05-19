@@ -1,6 +1,6 @@
 <%-- 
     Document   : login
-    Created on : 06/04/2018, 1:42:27 PM
+    Created on : 17/05/2018, 11:05:00 AM
     Author     : Audwin
 --%>
 
@@ -10,28 +10,80 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Login Page</title>
-        <style>
-            .warning {
-                color: red;
-                font-weight: bold;
-            }
-        </style>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" type="text/css" href="css/my-login.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+        
     </head>
+    
     <%
         String emptyError = request.getParameter("emptyError");
         String emailError = request.getParameter("emailError");
         String passwordError = request.getParameter("passwordError");
     %>
-    <body>
-        <h1>Login</h1>
-        <p>Enter details to login: <span class="warning"><c:if test="${emptyError != null}"> <c:out value="${emptyError}"/></c:if></span></p>
-            <form action="loginAction.jsp" method="POST">
-                <table>
-                    <tr><td>Email</td><td><input type="text" name="email"> <span class="warning"><c:if test="${emailError != null}"> <c:out value="${emailError}"/></c:if> </span></td></tr>
-                    <tr><td>Password</td><td><input type="password" name="password"> <span class="warning"><c:if test="${passwordError != null}"> <c:out value="${passwordError}"/></c:if></span></td></tr>
-                    <tr><td></td><td><input type="submit" value="Login"></td></tr>
-            </table>
-        </form>
-    </body>
+    
+    <body class="my-login-page">
+    <center>
+        <div class="container">
+            <a href="index.jsp"><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="padding-top:20px; text-align:center"/></a>
+
+            <!-- Header -->
+            <div class="wrapper" style="width:500px; text-align: left">
+                <br/><h4 class="card-title font-weight-monospace">Sign in to WSD Bookstore</h4>
+                <p class="font-weight-light">Enter your details below: 
+                    <c:if test="${emptyError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 100px"><c:out value="${emptyError}"/></c:if></span>
+                </p><br/>
+
+                <!-- Login Form -->
+                <form method="POST" action="loginAction.jsp">
+                    <div class="form-group">
+                        <label for="email">Email Address
+                            <c:if test="${emailError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 220px"> <c:out value="${emailError}"/></c:if></span>
+                        </label>
+                        <input id="email" type="text" class="form-control" name="email" value="" autofocus="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password
+                            <c:if test="${passwordError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 222px"> <c:out value="${passwordError}"/></c:if></span>
+                            
+                            <!--<a href="forgot.jsp" class="float-right font-weight-monospace text-muted" style="text-align:right; margin-left: 300px ">
+                                Forgot Password?
+                            </a>-->
+                        </label>
+
+                        <div style="position:relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" data-eye="">
+                        </div>
+                    </div>
+
+                    <div class="form-group no-margin">
+                        <br><button type="submit" value="login" class="btn btn-danger btn-block">
+                            Login
+                        </button>
+                        <input type="hidden" name="submitted" value="true">
+                    </div>
+                    <div class="margin-top20 text-center">
+                        Don't have an account? <a href="register.jsp" class="text-muted font-weight-light" data-toggle="">Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </center>
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+</body>
 </html>
