@@ -4,8 +4,8 @@
     Author     : Audwin
 --%>
 
-<%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.wsd.*"%>
 <!DOCTYPE html>
 <html>
     <head>

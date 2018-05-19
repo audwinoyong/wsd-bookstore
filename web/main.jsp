@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>BookingAction</title>
+        <title>Main Page</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" type="text/css" href="css/my-login.css">

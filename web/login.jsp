@@ -35,7 +35,7 @@
 
             <!-- Header -->
             <div class="wrapper" style="width:500px; text-align: left">
-                <br/><h4 class="card-title font-weight-monospace">Sign in to WSD Bookstore</h4>
+                <br/><h4 class="card-title font-weight-monospace">Login to WSD Bookstore</h4>
                 <p class="font-weight-light">Enter your details below: 
                     <c:if test="${emptyError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 100px"><c:out value="${emptyError}"/></c:if></span>
                 </p><br/>
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="form-group no-margin">
-                        <br><button type="submit" value="login" class="btn btn-danger btn-block">
+                        <br><button type="submit" value="login" class="btn btn-primary btn-block">
                             Login
                         </button>
                         <input type="hidden" name="submitted" value="true">

@@ -43,7 +43,7 @@
                     <p>Click <a href="index.jsp">here</a> to proceed to the main page.</p>
 
                     <% 
-                        User user  = new User(email, name, password, gender, favcol);
+                        User user  = new User(name, email, password);
                         session.setAttribute("user", user);
 
                         users.addUser(user);

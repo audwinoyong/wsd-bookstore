@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
     <user>
-        <email>leesungrin1@gmail.com</email>
         <name>Sung Rin Rhee</name>
+        <email>leesungrin1@gmail.com</email>
         <password>asdf1234</password>
     </user>
     <user>
-        <email>audwin@live.com</email>
         <name>Audwin Oyong</name>
+        <email>audwin@live.com</email>
         <password>foofoofoo</password>
     </user>
     <user>
-        <email>ronald@bloggs.com</email>
         <name>Ronald Botleroo</name>
+        <email>ronald@bloggs.com</email>
         <password>foobarbar</password>
     </user>
 </users>
