@@ -36,8 +36,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
+    <jsp:include page="navbar.jsp"/>
     <body>
-
         <h1>Reservation complete!</h1>
          <table>
                 <tr>

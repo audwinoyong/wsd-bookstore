@@ -4,24 +4,18 @@
     Author     : Audwin
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.wsd.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Register Page</title>
-
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" type="text/css" href="css/my-login.css">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
     </head>
-
+    
+    <jsp:include page="navbar.jsp"/>
     <%
         String emptyError = request.getParameter("emptyError");
         String nameError = request.getParameter("nameError");
@@ -32,7 +26,7 @@
     <body class="my-register-page">
     <center>
         <div class="container">
-            <a href="main.jsp"><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></a>
+            <!--<a href="main.jsp"><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></a>-->
 
             <!-- Header -->
             <div class="wrapper" style="width:500px; text-align: left">

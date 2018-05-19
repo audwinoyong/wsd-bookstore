@@ -20,6 +20,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book Details</title>
     </head>
+    
+    <jsp:include page="navbar.jsp"/>
     <body>
 <% String filePath = application.getRealPath("WEB-INF/reservation.xml");
    String resultPath = application.getRealPath("WEB-INF/result3.xml");%>

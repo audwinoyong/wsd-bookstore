@@ -25,6 +25,8 @@
         }
         </script>        
     </head>
+    
+    <jsp:include page="navbar.jsp"/>
     <body>
 <% String filePath = application.getRealPath("WEB-INF/books.xml");
    String resultPath = application.getRealPath("WEB-INF/result2.xml");%>

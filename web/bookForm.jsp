@@ -16,6 +16,8 @@
         }
         </script>        
     </head>
+    
+    <jsp:include page="navbar.jsp"/>
     <body>
         <form action="booklistComplete.jsp" method="POST">
             <table>

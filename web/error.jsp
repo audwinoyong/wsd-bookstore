@@ -11,6 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
+    <jsp:include page="navbar.jsp"/>
     <body>
         <h1>Books not found!</h1>
         <a href ="main.jsp">Back to Main</a>
