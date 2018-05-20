@@ -26,7 +26,7 @@
         String filePath = application.getRealPath("WEB-INF/books.xml");
         String resultPath = application.getRealPath("WEB-INF/result.xml");
     %>
-    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="application">
+    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="request">
         <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
     <%
@@ -50,8 +50,8 @@
                     <tr align="right">
                         <td>
                             <a href="main.jsp">Main</a> | 
-                            <a href="listnewbook.jsp">List New Book</a> | 
-                            <a href="bookings.jsp">Show My Booking</a> | 
+                            <a href="bookForm.jsp">List New Book</a> | 
+                            <a href="booklist.jsp">Show My Listing</a> | 
                             <a href="logout.jsp">Logout</a>
                         </td>
                     </tr>
