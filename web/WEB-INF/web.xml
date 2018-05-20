@@ -24,4 +24,10 @@
         <servlet-name>Jersey REST Web Services</servlet-name>
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
+    
+    <!-- When an error 404 occurs, redirect to an error page -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
 </web-app>
