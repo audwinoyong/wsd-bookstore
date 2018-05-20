@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users>
+<?xml-stylesheet type="text/xsl" href="users.xsl"?>
+<users 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="users.xsd">
     <user>
         <name>Sung Rin Rhee</name>
-        <email>leesungrin1@gmail.com</email>
+        <email>leesungrin@gmail.com</email>
         <password>asdf1234</password>
+        <dob>1993-01-01</dob>
     </user>
     <user>
         <name>Audwin Oyong</name>
         <email>audwin@live.com</email>
         <password>foofoofoo</password>
+        <dob>1993-02-12</dob>
     </user>
     <user>
         <name>Ronald Botleroo</name>
         <email>ronald@bloggs.com</email>
         <password>foobarbar</password>
+        <dob>1993-03-23</dob>
     </user>
 </users>

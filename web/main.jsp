@@ -4,34 +4,27 @@
     Author     : sungrinrhee
 --%>
 
-<%@page import="java.io.PrintWriter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--<%@page contentType="application/xml" import="java.util.*" import="uts.wsd.*"%>--%>
 <%@page import="uts.wsd.*" %>
+<%@page import="java.io.PrintWriter"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Main Page</title>
-
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" type="text/css" href="css/my-login.css">
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
     </head>
+
+    <jsp:include page="navbar.jsp"/>
     <%
         String filePath = application.getRealPath("WEB-INF/books.xml");
         String resultPath = application.getRealPath("WEB-INF/result.xml");
     %>
-    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="request">
+    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="application">
         <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
     <%
-        User user = (User) session.getAttribute("user");
-
         bookApp.setFilePath(filePath);
         Books books = bookApp.getBooks();
 
@@ -43,39 +36,6 @@
     <body>
     <center>
         <div class="container">
-            <% if (user != null) {%>
-            <div class="float-right">
-                <table class="table-responsive">
-                    <tr align="right"><td>Welcome, <%= user.getName()%>! &lt;<%= user.getEmail()%>&gt;</td></tr>
-                    <tr align="right">
-                        <td>
-                            <a href="main.jsp">Main</a> | 
-                            <a href="bookForm.jsp">List New Book</a> | 
-                            <a href="booklist.jsp">Show My Listing</a> | 
-                            <a href="logout.jsp">Logout</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <% } else { %>
-            <div class="float-right">
-                <table class="table-responsive" align="right">
-                    <tr align="right"><td>You are not logged in</td></tr>
-                    <tr align="right">
-                        <td>
-                            <a href="main.jsp">Main</a> | 
-                            <a href="login.jsp">Login</a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <% } %>
-            
-            <br/>
-            <br/>
-            <br/>
-            
             <div class="wrapper" style="width:500px; text-align: center">
                 <form action="bookDetails.jsp" method="POST" style="text-align: center;">
                     <table class="table-responsive">

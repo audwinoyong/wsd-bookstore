@@ -16,6 +16,8 @@
     }
     </script>        
     </head>
+    
+    <jsp:include page="navbar.jsp"/>
     <body>
         <% 
               int bookId = Integer.parseInt(request.getParameter("bookId"));
