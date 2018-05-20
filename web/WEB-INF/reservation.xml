@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<?xml-stylesheet type="text/xsl" href="reservatio.xsl"?>
 <reservations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="reservation.xsd">
-
     <reservation>
         <bookId>1</bookId>
         <booktitle>Good mates</booktitle>

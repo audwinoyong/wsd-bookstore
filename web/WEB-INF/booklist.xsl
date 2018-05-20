@@ -17,7 +17,8 @@
                             <th>Publisher</th>
                             <th>Username</th>
                             <th>Abstract</th>   
-                            <th>Reservation</th>                                                        
+                            <th>Reservation</th>   
+                            <th>Delete</th>                                                     
                         </tr>
                     </thead>
                     <tbody>
@@ -30,8 +31,8 @@
 
     <xsl:template match="book">   
        <xsl:variable name="status" select="availablilty"/>
-        <xsl:variable name="href1">reservationForm.jsp?bookId=<xsl:value-of select="bookId"/>&amp;booktitle=<xsl:value-of select="booktitle"/></xsl:variable>     
-        <xsl:variable name="href2">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>     
+        <xsl:variable name="href1">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>     
+        <xsl:variable name="href2">deleteBook.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>     
        
         <tr>
             <td><xsl:value-of select="booktitle"/></td>
@@ -44,13 +45,14 @@
             <td><xsl:value-of select="username"/></td>
             <td><xsl:value-of select="abstract"/></td>
             <xsl:choose>
-                 <xsl:when test="$status = 'Available'">
-                     <td><a href="{$href1}"><xsl:value-of select="availablilty"/></a></td>
+                 <xsl:when test="$status = 'Reserved'">
+                     <td><a href="{$href1}"><xsl:value-of select="availablilty"/></a></td>                     
                  </xsl:when>
                  <xsl:otherwise>
-                     <td><a href="{$href2}"><xsl:value-of select="availablilty"/></a></td>                     
+                     <td>Not reserved</td>
                  </xsl:otherwise>
-             </xsl:choose>            
+             </xsl:choose>
+            <td><a href="{$href2}">Delete</a></td>                   
         </tr>  
     </xsl:template>
 </xsl:stylesheet>

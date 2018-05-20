@@ -20,7 +20,18 @@ public class Reservations implements Serializable {
     public void setList(ArrayList<Reservation> list) {
         this.list = list;
     }
+    public void removeReservation(Reservation reservation) {
+        list.remove(reservation);
+    }    
 
+    public Reservation getReservationByBookId(int bookId) {
+    for (Reservation reservation : list) {
+        if (reservation.getBookId() == bookId) {
+            return reservation;
+        }
+    }
+        return null;
+    }
     public ArrayList<Reservation> getReservationsByBookId(int bookId) {
          ArrayList<Reservation> reservationList = new ArrayList<>();
         for (Reservation reservation : list) {
@@ -30,6 +41,15 @@ public class Reservations implements Serializable {
         }
         return reservationList;
     }
+    public ArrayList<Reservation> getReservationsByUsername(String username) {
+         ArrayList<Reservation> reservationList = new ArrayList<>();
+        for (Reservation reservation : list) {
+            if (reservation.getUsername().equals(username)) {
+                reservationList.add(reservation);
+            }
+        }
+        return reservationList;
+    }    
     public void addReservation(Reservation reservation) {
         list.add(reservation);
     }    

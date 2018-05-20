@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Book implements Serializable {
 
-    private static AtomicInteger count = new AtomicInteger(5); 
+    private static AtomicInteger count = new AtomicInteger(6); 
     @XmlElement(name = "bookId")
     private int bookId;
     @XmlElement(name = "booktitle")

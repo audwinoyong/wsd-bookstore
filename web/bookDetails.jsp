@@ -18,12 +18,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Book Details</title>
-        <script>
-        function goBack() {
-            window.history.back();
-        }
-        </script>        
+        <title>Book Details</title>   
     </head>
     
     <jsp:include page="navbar.jsp"/>
@@ -34,10 +29,10 @@
        <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
    </jsp:useBean>
    
-   <% Books books = bookApp.getBooks(); %>
-   <%
+   <% Books books = bookApp.getBooks(); 
        String booktitle = request.getParameter("booktitle");
        ArrayList<Book> matches = books.getBooksByTitle(booktitle);
+       if(matches.isEmpty()) response.sendRedirect("error.jsp");
 
         String select = request.getParameter("select");
         String search = request.getParameter("search");
@@ -47,6 +42,8 @@
                 matches = books.getBooksByTitle(search);
             } else if (select.equals("username")) {
                 matches = books.getBooksByUsername(search);
+            } else if (select.equals("Available")) {
+                matches = books.getBooksByStatus("Available");
             } 
         }       
        
@@ -57,33 +54,36 @@
        
    
    %>    
-        <form action="bookDetails.jsp" method="POST">
-                <table class="table-responsive">
-                    <tr>
-                        <td>
-                        <select class="form-control" name="select" id="select">
-                            <option value=""> Choose by:</option>
-                            <option value="bookstitle">book title</option>
-                            <option value="username">username</option>
-                        </select>
-                        </td>
-                        <td>
-                        <input class="form-control" name="search" type="text" style="margin-left:10px;margin-right:10px;">
-                        </td>
-                        <td>
-                        <input class="form-control" type="Submit" value="Submit">
-                        </td>
-                    </tr>
-                </table>
-            </form>    
-        <c:import url="WEB-INF/result2.xml" var="inputDoc" />
-        <c:import url="WEB-INF/bookdetail.xsl" var="stylesheet" />
-        <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
-        </x:transform>
-        <button onclick="goBack()">Go Back</button>
-        
-             
-        
+        <div class="container">
+           <div class="wrapper" style="width:1000px; text-align: center">
+             <form action="bookDetails.jsp" method="POST" style="text-align: center;">
+                     <table class="table-responsive" align="center" style="text-align: center;">
+                         <tr>
+                             <td>
+                             <select class="form-control" name="select" id="select">
+                                 <option value=""> Choose by:</option>
+                                 <option value="bookstitle">book title</option>
+                                 <option value="username">username</option>
+                                 <option value="Available">available only</option>                                 
+                             </select>
+                             </td>
+                             <td>
+                             <input class="form-control" name="search" type="text" style="margin-left:10px;margin-right:10px;">
+                             </td>
+                             <td>
+                             <input class="form-control" type="Submit" value="Submit">
+                             </td>
+                         </tr>
+                     </table>
+                 </form>    
+             <c:import url="WEB-INF/result2.xml" var="inputDoc" />
+             <c:import url="WEB-INF/bookdetail.xsl" var="stylesheet" />
+             <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
+             </x:transform>
+             <br>
+             <input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />
+           </div>
+        </div>
     </body>
 </html>
 

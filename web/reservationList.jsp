@@ -25,28 +25,25 @@
     <body>
 <% String filePath = application.getRealPath("WEB-INF/reservation.xml");
    String resultPath = application.getRealPath("WEB-INF/result3.xml");%>
-   <jsp:useBean id="reservationApp" class="uts.wsd.ReservationApplication" scope="page">
+   <jsp:useBean id="reservationApp" class="uts.wsd.ReservationApplication" scope="application">
        <jsp:setProperty name="reservationApp" property="filePath" value="<%=filePath%>"/>
    </jsp:useBean>
    
-   <% Reservations reservations = reservationApp.getReservations(); %>
-   <%
-       int bookId = Integer.parseInt(request.getParameter("bookId"));
-       ArrayList<Reservation> matches = reservations.getReservationsByBookId(bookId);
+   <% Reservations reservations = reservationApp.getReservations(); 
+       User user = (User) session.getAttribute("user");
+       String username = user.getName();
+       ArrayList<Reservation> matches = reservations.getReservationsByUsername(username);
 
-       
        reservationApp.setFilePath(resultPath);
        Reservations results = reservationApp.getReservations();
        results.addAll(matches);
        reservationApp.updateXML(results, resultPath);
-       
-   
     %>    
     <div class="container">
       <div class="wrapper" style="width:500px; text-align: center">
 
         <c:import url="WEB-INF/result3.xml" var="inputDoc" />
-        <c:import url="WEB-INF/reservation.xsl" var="stylesheet" />
+        <c:import url="WEB-INF/reservationlist.xsl" var="stylesheet" />
         <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
         </x:transform>
         <br><input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />

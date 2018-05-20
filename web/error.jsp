@@ -14,7 +14,13 @@
     
     <jsp:include page="navbar.jsp"/>
     <body>
-        <h1>Books not found!</h1>
-        <a href ="main.jsp">Back to Main</a>
+        <div class="container">
+            <div class="wrapper" style="width:1000px; text-align: center">
+                          
+                <h1>Books not found!</h1>
+   
+              <a class="btn btn-primary btn-sm"  href="main.jsp">Go to Main</a>           
+            </div>
+       </div>
     </body>
 </html>

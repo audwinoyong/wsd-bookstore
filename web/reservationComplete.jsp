@@ -40,45 +40,51 @@
     <jsp:include page="navbar.jsp"/>
     <body>
         <h1>Reservation complete!</h1>
-         <table>
-                <tr>
-                    <td>
-                    Your book Id:  
-                    </td>
-                    
-                    <td>
-                        <%=bookId%>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    Your book title:   
-                    </td>
-                    
-                    <td>
-                        <%=booktitle%>
-                    </td>
-                </tr> 
-                <tr>
-                    <td>
-                    Your name:   
-                    </td>
-                    
-                    <td>
-                        <%=username%>
-                    </td>
-                </tr>                 
-                <tr>
-                    <td>
-                    Your email   
-                    </td>
-                    
-                    <td>
-                        <%=email%>
-                    </td>
-                </tr> 
-                
-            </table>
-        <a href ="main.jsp">Go to Main</a>
+       <div class="container">
+            <div class="wrapper" style="width:500px; text-align: center">
+
+                <table align="center">
+                       <tr>
+                           <td>
+                           Your book Id:  
+                           </td>
+
+                           <td>
+                               <%=bookId%>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td>
+                           Your book title:   
+                           </td>
+
+                           <td>
+                               <%=booktitle%>
+                           </td>
+                       </tr> 
+                       <tr>
+                           <td>
+                           Your name:   
+                           </td>
+
+                           <td>
+                               <%=username%>
+                           </td>
+                       </tr>                 
+                       <tr>
+                           <td>
+                           Your email   
+                           </td>
+
+                           <td>
+                               <%=email%>
+                           </td>
+                       </tr> 
+
+                   </table>
+            <br><a class="btn btn-primary btn-sm"  href="main.jsp">Go to Main</a>
+            </div>
+            </div>
+       </div>
     </body>
 </html>

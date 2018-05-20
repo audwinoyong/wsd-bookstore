@@ -21,7 +21,7 @@
         String filePath = application.getRealPath("WEB-INF/books.xml");
         String resultPath = application.getRealPath("WEB-INF/result.xml");
     %>
-    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="application">
+    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="page">
         <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
     <%
@@ -45,6 +45,7 @@
                                     <option value="">Choose by:</option>
                                     <option value="booktitle">book title</option>
                                     <option value="username">username</option>
+                                    <option value="Available">Available Only</option> 
                                 </select>
                             </td>
                             <td>
