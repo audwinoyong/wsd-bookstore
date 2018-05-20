@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">                
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html"/>
     <xsl:template match="/">
         <html>
@@ -16,23 +16,23 @@
                             <th>PublishYear</th>
                             <th>Publisher</th>
                             <th>Username</th>
-                            <th>Abstract</th>   
-                            <th>Reservation</th>                                                        
+                            <th>Abstract</th>
+                            <th>Reservation</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <xsl:apply-templates/>                       
+                        <xsl:apply-templates/>
                     </tbody>
                 </table>
             </body>
         </html>
     </xsl:template>
 
-    <xsl:template match="book">   
+    <xsl:template match="book">
        <xsl:variable name="status" select="availablilty"/>
-        <xsl:variable name="href1">reservationForm.jsp?bookId=<xsl:value-of select="bookId"/>&amp;booktitle=<xsl:value-of select="booktitle"/></xsl:variable>     
-        <xsl:variable name="href2">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>     
-       
+        <xsl:variable name="href1">reservationForm.jsp?bookId=<xsl:value-of select="bookId"/>&amp;booktitle=<xsl:value-of select="booktitle"/></xsl:variable>
+        <xsl:variable name="href2">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>
+
         <tr>
             <td><xsl:value-of select="booktitle"/></td>
             <td><xsl:value-of select="author"/></td>
@@ -48,9 +48,9 @@
                      <td><a href="{$href1}"><xsl:value-of select="availablilty"/></a></td>
                  </xsl:when>
                  <xsl:otherwise>
-                     <td><a href="{$href2}"><xsl:value-of select="availablilty"/></a></td>                     
+                     <td><a href="{$href2}"><xsl:value-of select="availablilty"/></a></td>
                  </xsl:otherwise>
-             </xsl:choose>            
-        </tr>  
+             </xsl:choose>
+        </tr>
     </xsl:template>
 </xsl:stylesheet>

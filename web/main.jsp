@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : main
     Created on : May 18, 2018, 10:22:16 PM
     Author     : sungrinrhee
@@ -25,7 +25,7 @@
         <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
     <%
-        
+
         bookApp.setFilePath(filePath);
         Books books = bookApp.getBooks();
 
@@ -37,9 +37,16 @@
     <body>
     <center>
         <div class="container">
-            <div class="wrapper" style="width:500px; text-align: center">
+            <!--Breadcrumb navigation bar-->
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">Main</li>
+                </ol>
+            </nav>
+
+            <div class="wrapper" style="text-align: left;">
                 <!-- Input form of search query sorted by BookTitle or Username -->
-                <form action="bookDetails.jsp" method="POST" style="text-align: center;">
+                <form action="bookDetails.jsp" method="POST">
                     <table class="table-responsive">
                         <tr>
                             <td>
@@ -50,14 +57,14 @@
                                 </select>
                             </td>
                             <td>
-                                <input class="form-control" name="search" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input class="form-control" name="search" type="text" style="margin-left:10px; margin-right:10px;">
                             </td>
                             <td>
                                 <input class="form-control" type="Submit" value="Submit">
                             </td>
                         </tr>
                     </table>
-                </form>        
+                </form>
 
                 <!-- Get all the information from books.xsl -->
                 <c:import url="WEB-INF/result.xml" var="inputDoc" />

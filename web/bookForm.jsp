@@ -1,5 +1,5 @@
-<%-- 
-    Document   : reservationForm
+<%--
+    Document   : bookForm
     Created on : May 19, 2018, 4:40:56 PM
     Author     : sungrinrhee
 --%>
@@ -9,85 +9,70 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>List book</title>       
+        <title>List New Book</title>
     </head>
-    
+
     <jsp:include page="navbar.jsp"/>
     <body>
+    <center>
         <div class="container">
-            <div class="wrapper" style="width:500px; text-align: center">
-                <form action="booklistComplete.jsp" method="POST" style="text-align: center;">
+            <!--Breadcrumb navigation bar-->
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="main.jsp">Main</a></li>
+                    <li class="breadcrumb-item" active>List New Book</li>
+                </ol>
+            </nav>
+
+            <div class="wrapper" style="text-align: left;">
+                <form action="booklistComplete.jsp" method="POST">
                     <table align="center">
                         <tr>
+                            <td>Book title:</td>
                             <td>
-                            Book title: 
-                            </td>
-
-                            <td>
-                             <input name="booktitle" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="booktitle" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Author:</td>
                             <td>
-                            Author:  
-                            </td>
-
-                            <td>
-                             <input name="author" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="author" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Category:</td>
                             <td>
-                            Category: 
-                            </td>
-
-                            <td>
-                             <input name="category" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="category" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Book condition:</td>
                             <td>
-                            Book condition 
-                            </td>
-
-                            <td>
-                             <input name="condition" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="condition" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Book ISBN:</td>
                             <td>
-                            Book isbn: 
-                            </td>
-
-                            <td>
-                             <input name="isbn" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="isbn" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Book publish year:</td>
                             <td>
-                            Book publish year: 
-                            </td>
-
-                            <td>
-                             <input name="publishYear" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="publishYear" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Book publisher</td>
                             <td>
-                            Book publisher 
-                            </td>
-
-                            <td>
-                             <input name="publisher" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="publisher" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
+                            <td>Book abstract:</td>
                             <td>
-                            Book abstract:  
-                            </td>
-
-                            <td>
-                             <input name="abst" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="abst" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>
                         </tr>
                         <tr>
@@ -101,8 +86,9 @@
                         </tr>
 
                     </table>
-                </form>  
+                </form>
             </div>
         </div>
-    </body>
+    </center>
+</body>
 </html>

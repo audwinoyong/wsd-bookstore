@@ -1,5 +1,5 @@
 <%--
-    Document   : main
+    Document   : reservation
     Created on : May 18, 2018, 10:22:16 PM
     Author     : sungrinrhee
 --%>
@@ -46,7 +46,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="main.jsp">Main</a></li>
-                    <li class="breadcrumb-item"><a href="bookDetails.jsp">Book Details</a></li>
+                    <li class="breadcrumb-item"><a href="bookDetails.jsp" onclick="history.back(-1)">Book Details</a></li>
                     <li class="breadcrumb-item" active>Reservation</li>
                 </ol>
             </nav>
