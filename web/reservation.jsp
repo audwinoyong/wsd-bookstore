@@ -52,26 +52,6 @@
             </nav>
 
             <div class="wrapper" style="text-align: left;">
-                <!--<form action="main.jsp" method="POST">
-                                <table class="table-responsive">
-                                    <tr>
-                                        <td>
-                                        <select class="form-control" name="select" id="select">
-                                            <option value=""> Choose by:</option>
-                                            <option value="bookstitle">book title</option>
-                                            <option value="username">username</option>
-                                        </select>
-                                        </td>
-                                        <td>
-                                        <input class="form-control" name="search" type="text" style="margin-left:10px;margin-right:10px;">
-                                        </td>
-                                        <td>
-                                        <input class="form-control" type="Submit" value="Submit">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>-->
-
                 <c:import url="WEB-INF/result3.xml" var="inputDoc" />
                 <c:import url="WEB-INF/reservation.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">

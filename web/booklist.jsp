@@ -7,7 +7,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%--<%@page contentType="application/xml" import="java.util.*" import="uts.wsd.*"%>--%>
 <%@page import="uts.wsd.*" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>

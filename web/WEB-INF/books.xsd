@@ -64,7 +64,6 @@
     </xs:simpleType>
     <xs:simpleType name="email">
         <xs:restriction base="xs:string">
-            <!--            <xs:pattern value="([A-Za-z_\.]+)@([a-z\-]+\.)+([a-z\-]+)"/>-->
             <xs:pattern value="[a-zA-Z\._]+@[a-z\-]+(\.[a-z\-]+)+"/>
         </xs:restriction>
     </xs:simpleType>
