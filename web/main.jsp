@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : main
     Created on : May 18, 2018, 10:22:16 PM
     Author     : sungrinrhee
@@ -10,6 +10,7 @@
 <%@page import="java.io.PrintWriter"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -36,8 +37,15 @@
     <body>
     <center>
         <div class="container">
-            <div class="wrapper" style="width:500px; text-align: center">
-                <form action="bookDetails.jsp" method="POST" style="text-align: center;">
+            <!--Breadcrumb navigation bar-->
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">Main</li>
+                </ol>
+            </nav>
+
+            <div class="wrapper" style="text-align: left;">
+                <form action="bookDetails.jsp" method="POST">
                     <table class="table-responsive">
                         <tr>
                             <td>
@@ -48,19 +56,20 @@
                                 </select>
                             </td>
                             <td>
-                                <input class="form-control" name="search" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input class="form-control" name="search" type="text" style="margin-left:10px; margin-right:10px;">
                             </td>
                             <td>
                                 <input class="form-control" type="Submit" value="Submit">
                             </td>
                         </tr>
                     </table>
-                </form>        
+                </form>
 
                 <c:import url="WEB-INF/result.xml" var="inputDoc" />
                 <c:import url="WEB-INF/books.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
                 </x:transform>
+
             </div>
         </div>
     </center>

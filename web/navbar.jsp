@@ -43,7 +43,7 @@
                             <a class="nav-link" href="main.jsp">Main</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">List New Book</a>
+                            <a class="nav-link" href="bookForm.jsp">List New Book</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">My Listings</a>
