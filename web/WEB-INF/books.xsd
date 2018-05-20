@@ -41,7 +41,7 @@
         <xs:restriction base="xs:string">
             <xs:pattern value="\d{1}-\d{5}-\d{3}-\d{1}|\d{1}-\d{3}-\d{5}-\d{1}|\d{1}-\d{2}-\d{6}-\d{1}"/>
         </xs:restriction>
-    </xs:simpleType> 
+    </xs:simpleType>
     <xs:simpleType name="year">
         <xs:restriction base="xs:int">
             <xs:pattern value="\d{1,4}"/>
@@ -77,7 +77,7 @@
     <!-- Insert your element declarations here -->
     <xs:element name="books">
         <xs:complexType mixed="true">
-            <xs:sequence>      
+            <xs:sequence>
                 <xs:element name="book" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType mixed="true">
                         <xs:sequence>
@@ -90,8 +90,8 @@
                             <xs:element name="publishYear" type="year"/>
                             <xs:element name="publisher" type="publisher"/>
                             <xs:element name="username" type="username"/>
-                            <xs:element name="abstract" type="abstract"/> 
-                            <xs:element name="availablilty" type="availablilty"/> 
+                            <xs:element name="abstract" type="abstract"/>
+                            <xs:element name="availablilty" type="availablilty"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

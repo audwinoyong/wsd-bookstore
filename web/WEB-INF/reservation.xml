@@ -10,7 +10,7 @@
     <reservation>
         <bookId>2</bookId>
         <booktitle>Romeo and Juliet</booktitle>
-        <username>Audwin</username>        
+        <username>Audwin</username>
         <email>audwin@gmail.com</email>
-    </reservation>    
+    </reservation>
 </reservations>

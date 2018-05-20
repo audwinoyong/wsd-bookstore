@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Book implements Serializable {
 
-    private static AtomicInteger count = new AtomicInteger(6); 
+    private static AtomicInteger count = new AtomicInteger(6);
     @XmlElement(name = "bookId")
     private int bookId;
     @XmlElement(name = "booktitle")
@@ -41,8 +41,8 @@ public class Book implements Serializable {
     private String abst;
     @XmlElement(name = "availablilty")
     private String availablilty;
-        
-    
+
+
     public Book() {
     }
 

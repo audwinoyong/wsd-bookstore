@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : register
     Created on : 17/05/2018, 11:05:42 AM
     Author     : Audwin
@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Register Page</title>
     </head>
-    
+
     <jsp:include page="navbar.jsp"/>
     <%
         String emptyError = request.getParameter("emptyError");
@@ -32,7 +32,7 @@
             <!-- Header -->
             <div class="wrapper" style="width:500px; text-align: left">
                 <br/><h4 class="card-title font-weight-monospace">Register into WSD Bookstore</h4>
-                <p class="font-weight-light">Enter your details below: 
+                <p class="font-weight-light">Enter your details below:
                     <c:if test="${emptyError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 100px"><c:out value="${emptyError}"/></c:if></span>
                 </p><br/>
 

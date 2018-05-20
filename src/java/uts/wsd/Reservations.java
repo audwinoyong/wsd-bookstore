@@ -1,5 +1,5 @@
 package uts.wsd;
- 
+
 import java.util.*;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
@@ -22,7 +22,7 @@ public class Reservations implements Serializable {
     }
     public void removeReservation(Reservation reservation) {
         list.remove(reservation);
-    }    
+    }
 
     public Reservation getReservationByBookId(int bookId) {
     for (Reservation reservation : list) {
@@ -49,16 +49,16 @@ public class Reservations implements Serializable {
             }
         }
         return reservationList;
-    }    
+    }
     public void addReservation(Reservation reservation) {
         list.add(reservation);
-    }    
+    }
     public void addAll(ArrayList<Reservation> reservations) {
         list.removeAll(list);
         for (Reservation reservation: reservations) {
             list.add(reservation);
             }
-             
-    }    
+
     }
-    
+    }
+

@@ -18,15 +18,15 @@ import javax.xml.bind.annotation.XmlElement;
 public class Reservation implements Serializable {
 
     @XmlElement(name = "bookId")
-    private int bookId;    
+    private int bookId;
     @XmlElement(name = "booktitle")
     private String booktitle;
     @XmlElement(name = "username")
-    private String username;    
+    private String username;
     @XmlElement(name = "email")
     private String email;
-        
-    
+
+
     public Reservation() {
     }
 

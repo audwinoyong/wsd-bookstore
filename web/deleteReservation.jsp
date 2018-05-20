@@ -31,7 +31,7 @@
     <center>
         <div class="container">
             <p class="alert alert-danger" style="text-align: center">Your reservation has been canceled!</p>
-            
+
             <div class="wrapper" style="width:500px; text-align: center">
                 <br><a class="btn btn-primary btn-sm" href="reservationList.jsp">Back to My Reservations</a>
                 <a class="btn btn-primary btn-sm"  href="main.jsp">Go to Main</a>

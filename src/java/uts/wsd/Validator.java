@@ -28,10 +28,10 @@ public class Validator implements Serializable {
 
     // Password is minimum 8 characters, alphanumeric
     private String passwordPattern = "[a-zA-Z0-9]{8,}";
-    
+
     // Date of Birth is in "yyyy-mm-dd" format
     private String dobPattern = "\\d{4}-\\d{2}-\\d{2}";
-    
+
     private HashMap<String, String> errors = new HashMap();
 
     public Validator() {
@@ -50,15 +50,15 @@ public class Validator implements Serializable {
     public boolean isEmpty(String name, String email, String password) {
         return name.isEmpty() || email.isEmpty() || password.isEmpty();
     }
-    
+
     public boolean isEmpty(String email, String password) {
         return email.isEmpty() || password.isEmpty();
     }
-    
+
     public boolean validName(String name) {
         return validate(namePattern, name);
     }
-    
+
     public boolean validEmail(String email) {
         return validate(emailPattern, email);
     }
@@ -66,7 +66,7 @@ public class Validator implements Serializable {
     public boolean validPassword(String password) {
         return validate(passwordPattern, password);
     }
-    
+
     public boolean validDob(String dob) {
         return validate(dobPattern, dob);
     }

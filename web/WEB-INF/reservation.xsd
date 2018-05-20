@@ -7,7 +7,7 @@
         <xs:restriction id="ID" base="xs:integer">
             <xs:pattern value="[1-9][0-9]*"/>
         </xs:restriction>
-    </xs:simpleType>    
+    </xs:simpleType>
     <xs:simpleType name="title">
         <xs:restriction base="xs:string">
             <xs:pattern value="(([A-Za-z0-9]*)\s*)+"/>
@@ -26,7 +26,7 @@
     <!-- Insert your element declarations here -->
     <xs:element name="reservations">
         <xs:complexType mixed="true">
-            <xs:sequence>      
+            <xs:sequence>
                 <xs:element name="reservation" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType mixed="true">
                         <xs:sequence>

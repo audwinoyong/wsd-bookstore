@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : loginAction
     Created on : 17/05/2018, 11:05:26 AM
     Author     : Audwin
@@ -39,13 +39,13 @@
             if (validator.isEmpty(email, password)) {
                 session.setAttribute("emptyError", "[All fields are mandatory]");
                 response.sendRedirect("login.jsp");
-                
-            //Verification of Incorrect Email format    
+
+            //Verification of Incorrect Email format
             } else if (!validator.validEmail(email)) {
                 session.setAttribute("emailError", "[Incorrect email format]");
                 response.sendRedirect("login.jsp");
-                
-            //Verification of Password format    
+
+            //Verification of Password format
             } else if (!validator.validPassword(password)) {
                 session.setAttribute("passwordError", "[Incorrect password format]");
                 response.sendRedirect("login.jsp");

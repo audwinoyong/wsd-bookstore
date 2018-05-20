@@ -21,7 +21,7 @@
             </body>
         </html>
     </xsl:template>
-    
+
     <xsl:template match="book">
         <xsl:variable name="href">bookDetails.jsp?booktitle=<xsl:value-of select="booktitle"/></xsl:variable>
         <tr>

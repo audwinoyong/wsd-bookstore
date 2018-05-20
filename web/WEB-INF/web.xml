@@ -9,7 +9,7 @@
             30
         </session-timeout>
     </session-config>
-    
+
     <servlet>
         <servlet-name>Jersey REST Web Services</servlet-name>
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
@@ -19,12 +19,12 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-  
+
     <servlet-mapping>
         <servlet-name>Jersey REST Web Services</servlet-name>
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
-    
+
     <!-- When an error 404 occurs, redirect to an error page -->
     <error-page>
         <error-code>404</error-code>

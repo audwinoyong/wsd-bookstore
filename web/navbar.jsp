@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : navbar
     Created on : 19/05/2018, 9:17:46 PM
     Author     : Audwin
@@ -50,7 +50,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="reservationList.jsp">My Reservations</a>
-                        </li>                        
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.jsp">Logout</a>
                         </li>

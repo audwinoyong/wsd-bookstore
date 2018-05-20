@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package uts.wsd;
- 
+
 import java.util.*;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
 public class Users implements Serializable {
     @XmlElement(name = "user")
     private ArrayList<User> list = new ArrayList<User>();
- 
+
     public ArrayList<User> getList() {
         return list;
     }
@@ -32,7 +32,7 @@ public class Users implements Serializable {
         }
         return null; // Login incorrect. Return null.
     }
-    
+
     // function to check if email is already exists
     public User getUser(String email) {
         for (User user : list) {

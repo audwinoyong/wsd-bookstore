@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : logout
     Created on : 17/05/2018, 11:05:26 AM
     Author     : Audwin
@@ -14,7 +14,7 @@
     </head>
     <%
         session.invalidate();
-    %>   
+    %>
     <jsp:include page="navbar.jsp"/>
     <body>
 

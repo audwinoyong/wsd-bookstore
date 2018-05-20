@@ -61,8 +61,8 @@ public class ReservationApplication implements Serializable {
     public Reservations getReservations() {
         return reservations;
     }
-    
-    
+
+
 
     public void setReservation(Reservations reservations) {
         this.reservations = reservations;
