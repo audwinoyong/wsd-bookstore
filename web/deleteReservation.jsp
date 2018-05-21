@@ -20,12 +20,17 @@
     <jsp:useBean id="reservationApp" class="uts.wsd.ReservationApplication" scope="application">
         <jsp:setProperty name="reservationApp" property="filePath" value="<%=bookfilePath%>"/>
     </jsp:useBean>
+    <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="application">
+        <jsp:setProperty name="bookApp" property="filePath" value="<%=bookfilePath%>"/>
+    </jsp:useBean>    
 
     <%
         int bookId = Integer.parseInt(request.getParameter("bookId"));
         Reservation reservation = reservationApp.getReservations().getReservationByBookId(bookId);
         reservationApp.getReservations().removeReservation(reservation);
         reservationApp.saveReservations();
+        bookApp.getBooks().getBookByBookId(bookId).setAvailablilty("Available");
+        bookApp.saveBooks();
     %>
     <body>
     <center>

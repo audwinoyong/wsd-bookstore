@@ -4,50 +4,54 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/result2.xml</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/reservationForm.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/DiaryApplication.java</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/booklistComplete.jsp</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/books.xsd</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/reservationComplete.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/bookForm.jsp</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/web.xml</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/BookApplication.java</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/main.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/rest/ListService.java</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/deleteBook.jsp</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/loginAction.jsp</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/books.xml</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/ReservationApplication.java</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/books.xml</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/Books.java</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/reservationlist.xsl</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/Book.java</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/books.xsl</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/result3.xml</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/Reservations.java</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/reservation.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/users.xsl</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/User.java</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/Reservation.java</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/wsdbookstore_logo.png</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/navbar.jsp</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/reservationList.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/rest/BookService.java</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/Users.java</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/users.xml</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/bookdetail.xsl</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/booklist.xsl</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/bookDetails.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/deleteReservation.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/error.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/reservation.xsd</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/index.html</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/result.xml</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/reservation.xml</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/users.xsd</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/login.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/Validator.java</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/reservation.xsl</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/reservationForm.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/booklistComplete.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/books.xsd</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/web.xml</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/main.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/loginAction.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/soap/ClientSOAP.java</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/src/java/uts/wsd/soap/client/BookClient.java</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/books.xsl</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/registerAction.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/wsdbookstore_logo.png</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/navbar.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/reservationList.jsp</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/users.xml</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/index.html</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/reservation.xml</file>
+            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/login.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/booklist.jsp</file>
             <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/register.jsp</file>
-            <file>file:/Users/sungrinrhee/NetBeansProjects/wsd_assignment3-3/web/WEB-INF/reservation.xsl</file>
         </group>
     </open-files>
 </project-private>

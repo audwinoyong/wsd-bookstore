@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.wsd.uts/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.wsd.uts/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="books" type="tns:books"/>
+
+<xs:element name="fetchTextBooks" type="tns:fetchTextBooks"/>
+
+<xs:element name="fetchTextBooksResponse" type="tns:fetchTextBooksResponse"/>
+
+<xs:element name="listTextBook" type="tns:listTextBook"/>
+
+<xs:element name="listTextBookResponse" type="tns:listTextBookResponse"/>
+
+<xs:element name="removeBook" type="tns:removeBook"/>
+
+<xs:element name="removeBookResponse" type="tns:removeBookResponse"/>
+
+<xs:element name="viewTextBook" type="tns:viewTextBook"/>
+
+<xs:element name="viewTextBookResponse" type="tns:viewTextBookResponse"/>
+
+<xs:complexType name="listTextBook">
+<xs:sequence>
+<xs:element name="arg0" type="tns:book" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="book">
+<xs:sequence>
+<xs:element name="bookId" type="xs:int"/>
+<xs:element name="booktitle" type="xs:string" minOccurs="0"/>
+<xs:element name="author" type="xs:string" minOccurs="0"/>
+<xs:element name="category" type="xs:string" minOccurs="0"/>
+<xs:element name="condition" type="xs:string" minOccurs="0"/>
+<xs:element name="isbn" type="xs:string" minOccurs="0"/>
+<xs:element name="publishYear" type="xs:int"/>
+<xs:element name="publisher" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="abstract" type="xs:string" minOccurs="0"/>
+<xs:element name="availablilty" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listTextBookResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removeBook">
+<xs:sequence>
+<xs:element name="arg0" type="tns:book" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removeBookResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewTextBook">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewTextBookResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:book" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fetchTextBooks">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="fetchTextBooksResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:books" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="books">
+<xs:sequence>
+<xs:element name="book" type="tns:book" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

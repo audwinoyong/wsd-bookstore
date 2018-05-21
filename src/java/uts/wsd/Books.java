@@ -54,6 +54,24 @@ public class Books implements Serializable {
         }
         return null;
     }
+    public ArrayList<Book> getAvailablity(String availability) {
+        ArrayList<Book> booklist = new ArrayList<Book>();
+        for (Book book : list) {
+            if(book.getAvailablilty().equals(availability)) {
+                booklist.add(book);
+            }
+        }
+        return booklist;
+    }
+    public ArrayList<Book> getCondition(String condition) {
+        ArrayList<Book> booklist = new ArrayList<Book>();
+        for (Book book : list) {
+            if(book.getCondition().equals(condition)) {
+                booklist.add(book);
+            }
+        }
+        return booklist;
+    }    
     public void addAll(ArrayList<Book> books) {
         list.removeAll(list);
         for (Book book : books) {
