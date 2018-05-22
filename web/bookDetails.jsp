@@ -31,9 +31,7 @@
         Books books = bookApp.getBooks();
         String booktitle = request.getParameter("booktitle");
         ArrayList<Book> matches = books.getBooksByTitle(booktitle);
-        if (matches.isEmpty()) {
-            response.sendRedirect("error.jsp");
-        }
+
 
         String select = request.getParameter("select");
         String search = request.getParameter("search");
@@ -47,6 +45,9 @@
                 matches = books.getBooksByStatus("Available");
             }
         }
+        if (matches.isEmpty()) {
+            response.sendRedirect("error.jsp");
+        }        
 
         bookApp.setFilePath(resultPath);
         Books results = bookApp.getBooks();

@@ -56,6 +56,7 @@
                 <c:import url="WEB-INF/reservation.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
                 </x:transform>
+                <br><input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />
 
             </div>
         </div>
