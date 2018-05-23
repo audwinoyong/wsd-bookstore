@@ -62,10 +62,10 @@
 
             <nav class="navbar navbar-light navbar-expand-md bg-light justify-content-center">
                 <a class="navbar-brand d-flex w-50 mr-auto" href="main.jsp"><img src="wsdbookstore_logo.png" alt="logo" style="width: 100px;"> </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+                <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
                     <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
                         <li class="nav-item">
                             <a class="nav-link" href="main.jsp">Main</a>

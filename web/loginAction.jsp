@@ -40,12 +40,12 @@
                 session.setAttribute("emptyError", "[All fields are mandatory]");
                 response.sendRedirect("login.jsp");
 
-            //Verification of Incorrect Email format
+                //Verification of Incorrect Email format
             } else if (!validator.validEmail(email)) {
                 session.setAttribute("emailError", "[Incorrect email format]");
                 response.sendRedirect("login.jsp");
 
-            //Verification of Password format
+                //Verification of Password format
             } else if (!validator.validPassword(password)) {
                 session.setAttribute("passwordError", "[Incorrect password format]");
                 response.sendRedirect("login.jsp");
@@ -81,17 +81,6 @@
             <p class="alert alert-danger" style="text-align: center"> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
         </div>
         <% }%>
-
-
-        <!-- JQuery -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
-
+        
     </body>
-
 </html>
