@@ -49,28 +49,46 @@ public class Books implements Serializable {
     public Book getBookByTitle(String title) {
         for (Book book : list) {
             if (book.getBooktitle().equals(title)) {
-                return book; //the email is not registered yet.
+                return book; 
             }
         }
         return null;
     }
-    public ArrayList<Book> getAvailablity(String availability) {
-        ArrayList<Book> booklist = new ArrayList<Book>();
+    public Books getBooklistByTitle(String title) {
+        Books books = new Books();
+        for (Book book : list) {
+            if (book.getBooktitle().equals(title)) {
+                books.addBook(book);
+            }
+        }
+        return books;
+    }   
+    public ArrayList<Book> getBooksByTitle(String booktitle) {
+        ArrayList<Book> bookList = new ArrayList<>();
+        for (Book book : list) {
+            if (book.getBooktitle().equals(booktitle)) {
+                bookList.add(book);
+            }
+        }
+        return bookList;
+    }    
+    public Books getAvailablity(String availability) {
+        Books books = new Books();
         for (Book book : list) {
             if(book.getAvailablilty().equals(availability)) {
-                booklist.add(book);
+                books.addBook(book);
             }
         }
-        return booklist;
+        return books;
     }
-    public ArrayList<Book> getCondition(String condition) {
-        ArrayList<Book> booklist = new ArrayList<Book>();
+    public Books getCondition(String condition) {
+        Books books = new Books();
         for (Book book : list) {
             if(book.getCondition().equals(condition)) {
-                booklist.add(book);
+                books.addBook(book);
             }
         }
-        return booklist;
+        return books;
     }    
     public void addAll(ArrayList<Book> books) {
         list.removeAll(list);
@@ -80,7 +98,16 @@ public class Books implements Serializable {
 
     }
 
-    public ArrayList<Book> getBooksByUsername(String username) {
+    public Books getBooklistByUsername(String username) {
+         Books books = new Books();
+        for (Book book : list) {
+            if (book.getUsername().equals(username)) {
+                books.addBook(book);
+            }
+        }
+        return books;
+    }
+  public ArrayList<Book> getBooksByUsername(String username) {
          ArrayList<Book> bookList = new ArrayList<>();
         for (Book book : list) {
             if (book.getUsername().equals(username)) {
@@ -88,7 +115,7 @@ public class Books implements Serializable {
             }
         }
         return bookList;
-    }
+    }    
     public ArrayList<Book> getBooksByStatus(String status) {
          ArrayList<Book> bookList = new ArrayList<>();
         for (Book book : list) {
@@ -99,15 +126,7 @@ public class Books implements Serializable {
         return bookList;
     }
 
-    public ArrayList<Book> getBooksByTitle(String booktitle) {
-        ArrayList<Book> bookList = new ArrayList<>();
-        for (Book book : list) {
-            if (book.getBooktitle().equals(booktitle)) {
-                bookList.add(book);
-            }
-        }
-        return bookList;
-    }
+
     public Books getBooksList(Books books){
         Books newBooks = new Books();
         ArrayList<Book> storedBooks = books.getBooks();

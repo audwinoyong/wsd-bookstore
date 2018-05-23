@@ -19,11 +19,11 @@
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </taskdef>
     </target>
-    <target name="wsgen-ClientSOAP" depends="wsgen-init">
+    <target name="wsgen-BookSOAP" depends="wsgen-init">
         <copy todir="${build.classes.dir}/META-INF">
-            <fileset dir="${webinf.dir}" includes="wsit-uts.wsd.soap.ClientSOAP.xml"/>
+            <fileset dir="${webinf.dir}" includes="wsit-uts.wsd.soap.BookSOAP.xml"/>
         </copy>
-        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="uts.wsd.soap.ClientSOAP" xendorsed="true">
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="uts.wsd.soap.BookSOAP" xendorsed="true">
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
@@ -43,21 +43,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-ClientSOAP" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/ClientSOAP"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ClientSOAP" destdir="${build.generated.dir}/jax-wsCache/ClientSOAP" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ClientSOAP/wsdl/localhost_8080/wsd_assignment3-3/ClientSOAP.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/wsd_assignment3-3/ClientSOAP?wsdl" xnocompile="true" xendorsed="true" package="uts.wsd.soap.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ClientSOAP/wsdl/localhost_8080/wsd_assignment3-3/ClientSOAP.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/ClientSOAP"/>
+    <target name="wsimport-client-bookApp" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/bookApp"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp" destdir="${build.generated.dir}/jax-wsCache/bookApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/wsd_assignment3-3/bookApp?wsdl" xnocompile="true" xendorsed="true" package="uts.wsd.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/bookApp"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/ClientSOAP">
+            <fileset dir="${build.generated.dir}/jax-wsCache/bookApp">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-ClientSOAP" depends="-init-project">
+    <target name="wsimport-client-clean-bookApp" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/uts/wsd/soap/client"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/ClientSOAP"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/bookApp"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-ClientSOAP"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-bookApp"/>
 </project>

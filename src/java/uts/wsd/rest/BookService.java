@@ -42,42 +42,36 @@ public class BookService {
     @GET
     @Path("books")
     @Produces(MediaType.APPLICATION_XML)
-    public Books fetchBookings() throws JAXBException, IOException {
+    public Books fetchBooks() throws JAXBException, IOException {
         return getBookApp().getBooks();
     }
 
     @GET
     @Path("books/username/{username}")
     @Produces(MediaType.APPLICATION_XML)
-    public ArrayList<Book> getUser(@PathParam("username") String username) throws Exception {
-        return getBookApp().getBooks().getBooksByUsername(username);
+    public Books getBooksByUserName(@PathParam("username") String username) throws Exception {
+        return getBookApp().getBooks().getBooklistByUsername(username);
     }
 
     @GET
     @Path("books/availability/{availability}")
     @Produces(MediaType.APPLICATION_XML)
-    public ArrayList<Book> getAvailability(@PathParam("avalability") String availability) throws Exception {
+    public Books getBooksByAvailability(@PathParam("availability") String availability) throws Exception {
         return getBookApp().getBooks().getAvailablity(availability);
     }
 
+    @GET
     @Path("books/condition/{condition}")
     @Produces(MediaType.APPLICATION_XML)
-    public ArrayList<Book> getCondition(@PathParam("condition") String condition) throws Exception {
+    public Books getBooksByCondition(@PathParam("condition") String condition) throws Exception {
         return getBookApp().getBooks().getCondition(condition);
     }
 
     @GET
-    @Path("bookstore/{title}")
+    @Path("books/title/{title}")
     @Produces(MediaType.APPLICATION_XML)
-    public Books getBooks(@PathParam("title") String title) throws JAXBException, IOException {
-        Books books = getBookApp().getBooks();
-        Books selectedBooks = new Books();
-        for (Book book : books.getBooks()) {
-            if (book.getBooktitle().equals(title)) {
-                selectedBooks.addBook(book);
-            }
-        }
-        return selectedBooks;
+    public Books getBooksByTitle(@PathParam("title") String title) throws JAXBException, IOException {
+        return getBookApp().getBooks().getBooklistByTitle(title);
     }
 
 }
