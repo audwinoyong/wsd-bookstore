@@ -25,6 +25,7 @@
     </jsp:useBean>
 
     <%
+        //List a new book with information filled by lister.
         User user = (User) session.getAttribute("user");
         String booktitle = request.getParameter("booktitle");
         String author = request.getParameter("author");

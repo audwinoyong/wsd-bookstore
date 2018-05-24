@@ -126,7 +126,7 @@ public class Books implements Serializable {
         return bookList;
     }
 
-
+    // Get a list of books organised by titles
     public Books getBooksList(Books books){
         Books newBooks = new Books();
         ArrayList<Book> storedBooks = books.getBooks();
@@ -136,21 +136,25 @@ public class Books implements Serializable {
             for (Book storedBook : storedBooks) {
                         String storedBooktitle = storedBook.getBooktitle();
                         if(booklist.isEmpty()) {
+                            // store the first book with a title.
                             newBooks.addBook(storedBook);
                         }
                         else {
                             size = booklist.size();
+                            // if there is a book with the same title, skip.                          
                             for(int i = 0; i < size; i++) {
                                 match = booklist.get(i).getBooktitle().equals(storedBooktitle);
                                 if(match) {
                                     break;
                                 }
+                                // if there is no book with the same title, add.
                                 else if(!match && i == size - 1) {
                                     booklist.add(storedBook);
                                 }
                             }
                     }
                 }
+            //return books sorted by titles.
             return newBooks;
         }
 

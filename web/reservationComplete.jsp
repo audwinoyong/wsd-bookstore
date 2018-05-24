@@ -40,6 +40,7 @@
         reservations.addReservation(reservation);
         reservationApp.saveReservations();
 
+        //set book's status to "Reserved"
         bookApp.getBooks().getBookByBookId(bookId).setAvailablilty("Reserved");
         bookApp.saveBooks();
     %>

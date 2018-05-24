@@ -29,8 +29,8 @@
     </jsp:useBean>
 
     <%
+        //Load reservation information by searching through book ID.
         Reservations reservations = reservationApp.getReservations();
-
         int bookId = Integer.parseInt(request.getParameter("bookId"));
         ArrayList<Reservation> matches = reservations.getReservationsByBookId(bookId);
 

@@ -51,9 +51,6 @@ public class BookSOAP {
 
     //user handler
     public DiaryApplication getDiaryApp() {
-        // This needs to be local variable in your "getDiaryApp" method
-        // It will not work if declared as a field (since field initializers
-        // are executed before dependency injection takes place).
         try {
             ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
             synchronized (application) {
@@ -70,7 +67,7 @@ public class BookSOAP {
             return null;
         }
     }
-
+    //Login function
     @WebMethod()
     public User userLogin(String email, String password) {
         try {
@@ -87,7 +84,7 @@ public class BookSOAP {
             return null;
         }
     }
-
+    // Get all books stored.
     @WebMethod()
     public Books fetchBooks() {
         try {
@@ -97,7 +94,7 @@ public class BookSOAP {
             return null;
         }
     }
-
+    // Get all books listed by specific user.
     @WebMethod()
     public ArrayList<Book> getBooksByUser(String username) {
         try {
@@ -108,7 +105,7 @@ public class BookSOAP {
             return null;
         }
     }
-
+    // List a new book with details filled.
     @WebMethod()
     public void addBook(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
         try {
@@ -116,12 +113,11 @@ public class BookSOAP {
             Books books = getBookApp().getBooks();
             books.addBook(book);
             getBookApp().updateXML(books, "WEB-INF/books.xml");
-            getBookApp().saveBooks();
         } catch (Exception e) {
             System.out.println("error");
         }
     }
-
+    // Delete a book from the list by its title.
     @WebMethod()
     public void deleteBook(String booktitle) {
         try {
@@ -129,7 +125,6 @@ public class BookSOAP {
             Book book = books.getBookByTitle(booktitle);
             books.removeBook(book);
             getBookApp().updateXML(books, "WEB-INF/books.xml");
-            getBookApp().saveBooks();
         } catch (Exception e) {
             System.out.println("error");
         }

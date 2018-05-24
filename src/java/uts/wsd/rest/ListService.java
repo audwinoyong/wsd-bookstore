@@ -33,7 +33,7 @@ public class ListService {
             return reservationApp;
         }
     }
-    
+    // Load all reservation
     @GET
     @Path("reservations")
     @Produces(MediaType.APPLICATION_XML)

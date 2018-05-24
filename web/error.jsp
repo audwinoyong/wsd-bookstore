@@ -16,12 +16,6 @@
     <body>
         <div class="container">
             <p class="alert alert-danger" style="text-align: center">Error 404 - Sorry, this page does not exist or books not found! Click <a href="main.jsp">here</a> to return to the main page.</p>
-
-<!--            <div class="wrapper" style="width:1000px; text-align: center">
-                <h1>Books not found!</h1>
-                <a class="btn btn-primary btn-sm"  href="main.jsp">Go to Main</a>
-            </div>-->
-
         </div>
     </body>
 </html>

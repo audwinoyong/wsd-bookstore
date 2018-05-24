@@ -26,7 +26,6 @@
         <xsl:variable name="href">bookDetails.jsp?booktitle=<xsl:value-of select="booktitle"/></xsl:variable>
         <tr>
             <td><a href ="{$href}"> <xsl:value-of select="booktitle"/></a></td>
-
             <td><xsl:value-of select="author"/></td>
             <td><xsl:value-of select="category"/></td>
         </tr>

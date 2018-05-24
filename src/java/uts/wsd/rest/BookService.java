@@ -39,34 +39,35 @@ public class BookService {
         }
     }
 
+    // Get all books.
     @GET
     @Path("books")
     @Produces(MediaType.APPLICATION_XML)
     public Books fetchBooks() throws JAXBException, IOException {
         return getBookApp().getBooks();
     }
-
+    // Get all books filtered by its username.
     @GET
     @Path("books/username/{username}")
     @Produces(MediaType.APPLICATION_XML)
     public Books getBooksByUserName(@PathParam("username") String username) throws Exception {
         return getBookApp().getBooks().getBooklistByUsername(username);
     }
-
+    // Get all books filtered by its status.
     @GET
     @Path("books/availability/{availability}")
     @Produces(MediaType.APPLICATION_XML)
     public Books getBooksByAvailability(@PathParam("availability") String availability) throws Exception {
         return getBookApp().getBooks().getAvailablity(availability);
     }
-
+    // Get all books filtered by its condition.
     @GET
     @Path("books/condition/{condition}")
     @Produces(MediaType.APPLICATION_XML)
     public Books getBooksByCondition(@PathParam("condition") String condition) throws Exception {
         return getBookApp().getBooks().getCondition(condition);
     }
-
+    // Get all books filtered by its title.
     @GET
     @Path("books/title/{title}")
     @Produces(MediaType.APPLICATION_XML)

@@ -16,15 +16,16 @@
 
     <jsp:include page="navbar.jsp"/>
     <% String bookfilePath = application.getRealPath("WEB-INF/reservation.xml");%>
-
+    <% String bookPath = application.getRealPath("WEB-INF/books.xml");%>
     <jsp:useBean id="reservationApp" class="uts.wsd.ReservationApplication" scope="application">
         <jsp:setProperty name="reservationApp" property="filePath" value="<%=bookfilePath%>"/>
     </jsp:useBean>
     <jsp:useBean id="bookApp" class="uts.wsd.BookApplication" scope="application">
-        <jsp:setProperty name="bookApp" property="filePath" value="<%=bookfilePath%>"/>
+        <jsp:setProperty name="bookApp" property="filePath" value="<%=bookPath%>"/>
     </jsp:useBean>    
 
     <%
+        //Cancel reservation by its assigned book id.
         int bookId = Integer.parseInt(request.getParameter("bookId"));
         Reservation reservation = reservationApp.getReservations().getReservationByBookId(bookId);
         reservationApp.getReservations().removeReservation(reservation);

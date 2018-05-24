@@ -30,6 +30,7 @@
         </jsp:useBean>
 
         <%
+            // Bring books by username
             Books books = bookApp.getBooks();
             User user = (User) session.getAttribute("user");
 

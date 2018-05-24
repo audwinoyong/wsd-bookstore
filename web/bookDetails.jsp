@@ -17,7 +17,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book Details</title>
     </head>
-
+    <!-- import navigation bar -->
     <jsp:include page="navbar.jsp"/>
     <%
         String filePath = application.getRealPath("WEB-INF/books.xml");
@@ -28,11 +28,12 @@
     </jsp:useBean>
 
     <%
+        //Sort books into titles
         Books books = bookApp.getBooks();
         String booktitle = request.getParameter("booktitle");
         ArrayList<Book> matches = books.getBooksByTitle(booktitle);
 
-
+        //Passing search options and searching keywords.
         String select = request.getParameter("select");
         String search = request.getParameter("search");
 
@@ -47,8 +48,8 @@
         }
         if (matches.isEmpty()) {
             response.sendRedirect("error.jsp");
-        }        
-
+        }
+        //save search results temporarily in result.xml.
         bookApp.setFilePath(resultPath);
         Books results = bookApp.getBooks();
         results.addAll(matches);
@@ -86,7 +87,7 @@
                         </tr>
                     </table>
                 </form>
-
+                <!-- Display results after transformation of xml into html by xslt -->
                 <c:import url="WEB-INF/result2.xml" var="inputDoc" />
                 <c:import url="WEB-INF/bookdetail.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">

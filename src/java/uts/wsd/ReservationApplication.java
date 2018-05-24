@@ -37,7 +37,7 @@ public class ReservationApplication implements Serializable {
         fin.close();
     }
 
-    // save "books" object (Java) to books.xml file
+    // save "reservation" object (Java) to reservation.xml file
     public void updateXML(Reservations reservations, String filePath) throws JAXBException, IOException {
         this.reservations = reservations;
         this.filePath = filePath;

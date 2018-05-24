@@ -37,7 +37,7 @@ public class BookApplication implements Serializable {
         fin.close();
     }
 
-    // save "books" object (Java) to books.xml file
+    // update its books and file path and save "books" object (Java) to books.xml file
     public void updateXML(Books books, String filePath) throws JAXBException, IOException {
         this.books = books;
         this.filePath = filePath;
@@ -48,7 +48,7 @@ public class BookApplication implements Serializable {
         m.marshal(books, fout);
         fout.close();
     }
-
+    // Save "books" object (Java) to books.xml file
     public void saveBooks() throws JAXBException, IOException {
         JAXBContext jc = JAXBContext.newInstance(Books.class);
         Marshaller m = jc.createMarshaller();

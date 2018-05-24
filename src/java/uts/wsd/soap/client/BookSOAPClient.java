@@ -46,7 +46,7 @@ public class BookSOAPClient {
                 select = scanner.nextLine();
             }
             switch (select) {
-                case "v":
+                case "v": // Display all the books stored.
                     List<Book> books = bookSOAP.fetchBooks().getBook();
                     System.out.println("List of books:");
                     for (Book book : books) {
@@ -56,7 +56,7 @@ public class BookSOAPClient {
                     }
                     break;
 
-                case "l":
+                case "l": // Ask Lister for book information and add the book to the list.
                     if (user != null) {
                         System.out.println("Enter the details of your book:");
                         System.out.print("Book title: ");
@@ -88,7 +88,7 @@ public class BookSOAPClient {
                         bookSOAP.addBook(title, author, category, condition, isbn, publishYear, publisher, user.getName(), abst);
                     }
                     break;
-                case "d":
+                case "d": // Delete a book by its title.
                     if (user != null) {
                         System.out.println("Enter the booktitle you want to delete:");
                         String title = scanner.nextLine();
@@ -96,7 +96,7 @@ public class BookSOAPClient {
                         System.out.println("Book is deleted successfully");
                     }
                     break;
-                case "i":
+                case "i": // Authentication(Login) asking user's email address and password.
                     System.out.print("Enter email address: ");
                     email = scanner.nextLine();
                     System.out.print("Enter password: ");
@@ -110,18 +110,18 @@ public class BookSOAPClient {
                         System.out.println("Error: Invalid email or password!");
                         break;
                     }
-                case "o":
+                case "o": // Logout procedure.
                     System.out.println("Logged out successfully.");
                     user = null;
                     break;
-                case "x":
+                case "x": // Exit the program.
                     break;
-                default:
+                default: // If user's input is not valied, prompt user to type the valid input.
                     System.out.println("Invalid input, please try again. \n");
                     break;
             }
         } while (!select.equals("x"));
-        System.out.println("Goodbye.");
+        System.out.println("Goodbye."); //End of the program
 
     }
 }
