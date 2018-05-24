@@ -30,7 +30,7 @@
     </xsl:template>
 
     <xsl:template match="book">
-       <xsl:variable name="status" select="availablilty"/>
+       <xsl:variable name="status" select="availability"/>
         <xsl:variable name="href1">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>
         <xsl:variable name="href2">deleteBook.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>
 
@@ -46,7 +46,7 @@
             <td><xsl:value-of select="abstract"/></td>
             <xsl:choose>
                  <xsl:when test="$status = 'Reserved'">
-                     <td><a href="{$href1}"><xsl:value-of select="availablilty"/></a></td>
+                     <td><a href="{$href1}"><xsl:value-of select="availability"/></a></td>
                  </xsl:when>
                  <xsl:otherwise>
                      <td>Not reserved</td>

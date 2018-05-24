@@ -58,7 +58,7 @@ public class BookService {
     @Path("books/availability/{availability}")
     @Produces(MediaType.APPLICATION_XML)
     public Books getBooksByAvailability(@PathParam("availability") String availability) throws Exception {
-        return getBookApp().getBooks().getAvailablity(availability);
+        return getBookApp().getBooks().getAvailability(availability);
     }
     // Get all books filtered by its condition.
     @GET

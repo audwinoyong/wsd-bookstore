@@ -41,7 +41,7 @@
         reservationApp.saveReservations();
 
         //set book's status to "Reserved"
-        bookApp.getBooks().getBookByBookId(bookId).setAvailablilty("Reserved");
+        bookApp.getBooks().getBookByBookId(bookId).setAvailability("Reserved");
         bookApp.saveBooks();
     %>
 

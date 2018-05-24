@@ -39,8 +39,8 @@ public class Book implements Serializable {
     private String username;
     @XmlElement(name = "abstract")
     private String abst;
-    @XmlElement(name = "availablilty")
-    private String availablilty;
+    @XmlElement(name = "availability")
+    private String availability;
 
 
     public Book() {
@@ -57,7 +57,7 @@ public class Book implements Serializable {
         this.publisher = publisher;
         this.username = username;
         this.abst = abst;
-        this.availablilty = "Available";
+        this.availability = "Available";
     }
 
     public int getBookId() {
@@ -140,12 +140,12 @@ public class Book implements Serializable {
         this.abst = abst;
     }
 
-    public String getAvailablilty() {
-        return availablilty;
+    public String getAvailability() {
+        return availability;
     }
 
-    public void setAvailablilty(String availablilty) {
-        this.availablilty = availablilty;
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 
 

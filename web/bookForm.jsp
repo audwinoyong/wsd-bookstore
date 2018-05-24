@@ -64,7 +64,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Book publisher</td>
+                            <td>Book publisher:</td>
                             <td>
                                 <input name="publisher" type="text" style="margin-left:10px;margin-right:10px;">
                             </td>

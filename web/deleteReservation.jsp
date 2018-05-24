@@ -30,7 +30,7 @@
         Reservation reservation = reservationApp.getReservations().getReservationByBookId(bookId);
         reservationApp.getReservations().removeReservation(reservation);
         reservationApp.saveReservations();
-        bookApp.getBooks().getBookByBookId(bookId).setAvailablilty("Available");
+        bookApp.getBooks().getBookByBookId(bookId).setAvailability("Available");
         bookApp.saveBooks();
     %>
     <body>

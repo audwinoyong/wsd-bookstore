@@ -67,7 +67,7 @@
             <xs:pattern value="[a-zA-Z\._]+@[a-z\-]+(\.[a-z\-]+)+"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="availablilty">
+    <xs:simpleType name="availability">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:enumeration value="Available"/>
@@ -91,7 +91,7 @@
                             <xs:element name="publisher" type="publisher"/>
                             <xs:element name="username" type="username"/>
                             <xs:element name="abstract" type="abstract"/>
-                            <xs:element name="availablilty" type="availablilty"/>
+                            <xs:element name="availability" type="availability"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

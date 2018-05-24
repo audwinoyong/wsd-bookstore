@@ -72,10 +72,10 @@ public class Books implements Serializable {
         }
         return bookList;
     }    
-    public Books getAvailablity(String availability) {
+    public Books getAvailability(String availability) {
         Books books = new Books();
         for (Book book : list) {
-            if(book.getAvailablilty().equals(availability)) {
+            if(book.getAvailability().equals(availability)) {
                 books.addBook(book);
             }
         }
@@ -119,7 +119,7 @@ public class Books implements Serializable {
     public ArrayList<Book> getBooksByStatus(String status) {
          ArrayList<Book> bookList = new ArrayList<>();
         for (Book book : list) {
-            if (book.getAvailablilty().equals(status)) {
+            if (book.getAvailability().equals(status)) {
                 bookList.add(book);
             }
         }
