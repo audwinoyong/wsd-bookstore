@@ -5,5 +5,6 @@
     <system systemId="http://localhost:8080/wsd_assignment3-3/BookSOAP?wsdl" uri="src/conf/xml-resources/web-service-references/BookSOAP/wsdl/localhost_8080/wsd_assignment3-3/BookSOAP.wsdl"/>
     <system systemId="http://localhost:8080/wsd_assignment3-3/BookSOAP?xsd=1" uri="src/conf/xml-resources/web-service-references/BookSOAP/wsdl/localhost_8080/wsd_assignment3-3/BookSOAP.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/wsd_assignment3-3/bookApp?wsdl" uri="src/conf/xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl"/>
+    <system systemId="http://localhost:8080/wsd_assignment3-3/bookApp?WSDL" uri="src/conf/xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl"/>
     <system systemId="http://localhost:8080/wsd_assignment3-3/bookApp?xsd=1" uri="src/conf/xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.xsd_1.xsd"/>
 </catalog>

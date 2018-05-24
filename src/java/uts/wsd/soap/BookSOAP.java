@@ -26,11 +26,11 @@ import uts.wsd.User;
 @WebService(serviceName = "bookApp")
 public class BookSOAP {
 
-    //fetch all ressources
+    // Fetch all resources
     @Resource
     private WebServiceContext context;
-    //book handler
 
+    // Book handler
     private BookApplication getBookApp() {
         try {
             ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
@@ -49,7 +49,7 @@ public class BookSOAP {
         }
     }
 
-    //user handler
+    // User handler
     public DiaryApplication getDiaryApp() {
         try {
             ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
@@ -67,7 +67,8 @@ public class BookSOAP {
             return null;
         }
     }
-    //Login function
+
+    // Login function
     @WebMethod()
     public User userLogin(String email, String password) {
         try {
@@ -84,6 +85,7 @@ public class BookSOAP {
             return null;
         }
     }
+
     // Get all books stored.
     @WebMethod()
     public Books fetchBooks() {
@@ -94,6 +96,7 @@ public class BookSOAP {
             return null;
         }
     }
+
     // Get all books listed by specific user.
     @WebMethod()
     public ArrayList<Book> getBooksByUser(String username) {
@@ -105,6 +108,7 @@ public class BookSOAP {
             return null;
         }
     }
+
     // List a new book with details filled.
     @WebMethod()
     public void addBook(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
@@ -112,11 +116,15 @@ public class BookSOAP {
             Book book = new Book(booktitle, author, category, condition, isbn, publishYear, publisher, username, abst);
             Books books = getBookApp().getBooks();
             books.addBook(book);
-            getBookApp().updateXML(books, "WEB-INF/books.xml");
+
+            String filepath = getBookApp().getFilePath();
+            getBookApp().updateXML(books, filepath);
+
         } catch (Exception e) {
             System.out.println("error");
         }
     }
+
     // Delete a book from the list by its title.
     @WebMethod()
     public void deleteBook(String booktitle) {
@@ -124,7 +132,10 @@ public class BookSOAP {
             Books books = getBookApp().getBooks();
             Book book = books.getBookByTitle(booktitle);
             books.removeBook(book);
-            getBookApp().updateXML(books, "WEB-INF/books.xml");
+
+            String filepath = getBookApp().getFilePath();
+            getBookApp().updateXML(books, filepath);
+
         } catch (Exception e) {
             System.out.println("error");
         }

@@ -4,17 +4,11 @@
 <xsd:import namespace="http://soap.wsd.uts/" schemaLocation="http://localhost:8080/wsd_assignment3-3/bookApp?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="userLogin">
-<part name="parameters" element="tns:userLogin"/>
+<message name="getDiaryApp">
+<part name="parameters" element="tns:getDiaryApp"/>
 </message>
-<message name="userLoginResponse">
-<part name="parameters" element="tns:userLoginResponse"/>
-</message>
-<message name="getBooksByUser">
-<part name="parameters" element="tns:getBooksByUser"/>
-</message>
-<message name="getBooksByUserResponse">
-<part name="parameters" element="tns:getBooksByUserResponse"/>
+<message name="getDiaryAppResponse">
+<part name="parameters" element="tns:getDiaryAppResponse"/>
 </message>
 <message name="deleteBook">
 <part name="parameters" element="tns:deleteBook"/>
@@ -22,11 +16,23 @@
 <message name="deleteBookResponse">
 <part name="parameters" element="tns:deleteBookResponse"/>
 </message>
-<message name="getDiaryApp">
-<part name="parameters" element="tns:getDiaryApp"/>
+<message name="fetchBooks">
+<part name="parameters" element="tns:fetchBooks"/>
 </message>
-<message name="getDiaryAppResponse">
-<part name="parameters" element="tns:getDiaryAppResponse"/>
+<message name="fetchBooksResponse">
+<part name="parameters" element="tns:fetchBooksResponse"/>
+</message>
+<message name="getBooksByUser">
+<part name="parameters" element="tns:getBooksByUser"/>
+</message>
+<message name="getBooksByUserResponse">
+<part name="parameters" element="tns:getBooksByUserResponse"/>
+</message>
+<message name="userLogin">
+<part name="parameters" element="tns:userLogin"/>
+</message>
+<message name="userLoginResponse">
+<part name="parameters" element="tns:userLoginResponse"/>
 </message>
 <message name="addBook">
 <part name="parameters" element="tns:addBook"/>
@@ -34,50 +40,35 @@
 <message name="addBookResponse">
 <part name="parameters" element="tns:addBookResponse"/>
 </message>
-<message name="fetchBooks">
-<part name="parameters" element="tns:fetchBooks"/>
-</message>
-<message name="fetchBooksResponse">
-<part name="parameters" element="tns:fetchBooksResponse"/>
-</message>
 <portType name="BookSOAP">
-<operation name="userLogin">
-<input wsam:Action="http://soap.wsd.uts/BookSOAP/userLoginRequest" message="tns:userLogin"/>
-<output wsam:Action="http://soap.wsd.uts/BookSOAP/userLoginResponse" message="tns:userLoginResponse"/>
-</operation>
-<operation name="getBooksByUser">
-<input wsam:Action="http://soap.wsd.uts/BookSOAP/getBooksByUserRequest" message="tns:getBooksByUser"/>
-<output wsam:Action="http://soap.wsd.uts/BookSOAP/getBooksByUserResponse" message="tns:getBooksByUserResponse"/>
+<operation name="getDiaryApp">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/getDiaryAppRequest" message="tns:getDiaryApp"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/getDiaryAppResponse" message="tns:getDiaryAppResponse"/>
 </operation>
 <operation name="deleteBook">
 <input wsam:Action="http://soap.wsd.uts/BookSOAP/deleteBookRequest" message="tns:deleteBook"/>
 <output wsam:Action="http://soap.wsd.uts/BookSOAP/deleteBookResponse" message="tns:deleteBookResponse"/>
 </operation>
-<operation name="getDiaryApp">
-<input wsam:Action="http://soap.wsd.uts/BookSOAP/getDiaryAppRequest" message="tns:getDiaryApp"/>
-<output wsam:Action="http://soap.wsd.uts/BookSOAP/getDiaryAppResponse" message="tns:getDiaryAppResponse"/>
+<operation name="fetchBooks">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksRequest" message="tns:fetchBooks"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksResponse" message="tns:fetchBooksResponse"/>
+</operation>
+<operation name="getBooksByUser">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/getBooksByUserRequest" message="tns:getBooksByUser"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/getBooksByUserResponse" message="tns:getBooksByUserResponse"/>
+</operation>
+<operation name="userLogin">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/userLoginRequest" message="tns:userLogin"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/userLoginResponse" message="tns:userLoginResponse"/>
 </operation>
 <operation name="addBook">
 <input wsam:Action="http://soap.wsd.uts/BookSOAP/addBookRequest" message="tns:addBook"/>
 <output wsam:Action="http://soap.wsd.uts/BookSOAP/addBookResponse" message="tns:addBookResponse"/>
 </operation>
-<operation name="fetchBooks">
-<input wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksRequest" message="tns:fetchBooks"/>
-<output wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksResponse" message="tns:fetchBooksResponse"/>
-</operation>
 </portType>
 <binding name="BookSOAPPortBinding" type="tns:BookSOAP">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="userLogin">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getBooksByUser">
+<operation name="getDiaryApp">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -95,7 +86,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getDiaryApp">
+<operation name="fetchBooks">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getBooksByUser">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="userLogin">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -105,15 +114,6 @@
 </output>
 </operation>
 <operation name="addBook">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="fetchBooks">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

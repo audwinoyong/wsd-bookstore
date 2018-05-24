@@ -45,7 +45,7 @@
     </target>
     <target name="wsimport-client-bookApp" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/bookApp"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp" destdir="${build.generated.dir}/jax-wsCache/bookApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/wsd_assignment3-3/bookApp?wsdl" xnocompile="true" xendorsed="true" package="uts.wsd.soap.client">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp" destdir="${build.generated.dir}/jax-wsCache/bookApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/wsd_assignment3-3/bookApp?WSDL" xnocompile="true" xendorsed="true" package="uts.wsd.soap.client">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsd_assignment3-3/bookApp.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/bookApp"/>
         </wsimport>

@@ -7,7 +7,7 @@
   </services>
   <clients>
     <client name="bookApp">
-      <wsdl-url>http://localhost:8080/wsd_assignment3-3/bookApp?wsdl</wsdl-url>
+      <wsdl-url>http://localhost:8080/wsd_assignment3-3/bookApp?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/wsd_assignment3-3/bookApp.wsdl</local-wsdl-file>
       <package-name forceReplace="true">uts.wsd.soap.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -26,7 +26,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/wsd_assignment3-3/bookApp?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/wsd_assignment3-3/bookApp?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
