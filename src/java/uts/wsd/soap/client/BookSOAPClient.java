@@ -84,7 +84,7 @@ public class BookSOAPClient {
                         System.out.print("Book abstract: ");
                         String abst = scanner.nextLine();
 
-                        System.out.println("Book listed successfully");
+                        System.out.println("Book is listed successfully");
                         bookSOAP.addBook(title, author, category, condition, isbn, publishYear, publisher, user.getName(), abst);
                     }
                     break;

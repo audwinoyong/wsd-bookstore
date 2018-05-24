@@ -17,9 +17,7 @@
     %>
     <jsp:include page="navbar.jsp"/>
     <body>
-
         <div class="container">
-            <!--<center><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></center><hr>-->
             <p class="alert alert-danger" style="text-align: center">You have been logged out. Click <a href="main.jsp">here</a> to return to the main page.</p>
         </div>
 

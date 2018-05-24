@@ -23,29 +23,29 @@
 
     <body>
         <%
-            //Request the input from the login page
+            // Request the input from the login page
             String email = request.getParameter("email");
             String password = request.getParameter("password");
 
             Users users = diaryApp.getUsers();
-            //Verify user email and password with based database from users.xml
+            // Verify user email and password with data from users.xml
             User user = users.login(email, password);
 
             Validator validator = new Validator();
         %>
 
         <%
-            //Verification of empty input on email and password
+            // Verification of empty input on email and password
             if (validator.isEmpty(email, password)) {
                 session.setAttribute("emptyError", "[All fields are mandatory]");
                 response.sendRedirect("login.jsp");
 
-                //Verification of Incorrect Email format
+                // Verification of Incorrect Email format
             } else if (!validator.validEmail(email)) {
                 session.setAttribute("emailError", "[Incorrect email format]");
                 response.sendRedirect("login.jsp");
 
-                //Verification of Password format
+                // Verification of Password format
             } else if (!validator.validPassword(password)) {
                 session.setAttribute("passwordError", "[Incorrect password format]");
                 response.sendRedirect("login.jsp");
@@ -58,7 +58,6 @@
                 session.setAttribute("passwordError", "");
         %>
         <div class="container">
-            <!--<center><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></center><hr>-->
             <p class="alert alert-success" style="text-align: center">Login successful. Click <a href="main.jsp">here</a> to return to the main page.</p>
         </div>
 
@@ -77,10 +76,9 @@
 
         <!-- Incorrect password feedback -->
         <div class="container">
-            <!--<center><img src="wsdbookstore_logo.png" alt="WSD Bookstore" id="logo" style="margin-top: 15px;"/></center><hr>-->
             <p class="alert alert-danger" style="text-align: center"> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
         </div>
         <% }%>
-        
+
     </body>
 </html>
