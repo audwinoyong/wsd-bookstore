@@ -35,13 +35,7 @@ public class Validator implements Serializable {
     // Date of Birth is in "yyyy-mm-dd" format
     private String dobPattern = "\\d{4}-\\d{2}-\\d{2}";
 
-    private HashMap<String, String> errors = new HashMap();
-
     public Validator() {
-    }
-
-    public void add(String key, String err) {
-        errors.put(key, err);
     }
 
     public boolean validate(String pattern, String input) {
