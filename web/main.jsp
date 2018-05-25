@@ -5,7 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%--<%@page contentType="application/xml" import="java.util.*" import="uts.wsd.*"%>--%>
 <%@page import="uts.wsd.*" %>
 <%@page import="java.io.PrintWriter"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

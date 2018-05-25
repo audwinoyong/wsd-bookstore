@@ -17,6 +17,9 @@ import uts.wsd.Book;
 import uts.wsd.BookApplication;
 import uts.wsd.Books;
 import uts.wsd.DiaryApplication;
+import uts.wsd.Reservation;
+import uts.wsd.ReservationApplication;
+import uts.wsd.Reservations;
 import uts.wsd.User;
 
 /**
@@ -30,7 +33,7 @@ public class BookSOAP {
     @Resource
     private WebServiceContext context;
 
-    // Book handler
+    // Book controller
     private BookApplication getBookApp() {
         try {
             ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
@@ -49,7 +52,7 @@ public class BookSOAP {
         }
     }
 
-    // User handler
+    // User controller
     public DiaryApplication getDiaryApp() {
         try {
             ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
@@ -67,6 +70,24 @@ public class BookSOAP {
             return null;
         }
     }
+    // Reservation controller
+    public ReservationApplication getReservationApp() {
+        try {
+            ServletContext application = (ServletContext) context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
+            synchronized (application) {
+                ReservationApplication reservationApp = (ReservationApplication) application.getAttribute("reservationApp");
+                if (reservationApp == null) {
+                    reservationApp = new ReservationApplication();
+                    reservationApp.setFilePath(application.getRealPath("WEB-INF/reservation.xml"));
+                    application.setAttribute("reservationApp", reservationApp);
+                }
+                return reservationApp;
+            }
+        } catch (Exception e) {
+            System.out.println("error");
+            return null;
+        }
+    }    
 
     // Login function
     @WebMethod()
@@ -96,6 +117,7 @@ public class BookSOAP {
             return null;
         }
     }
+    
 
     // Get all books listed by specific user.
     @WebMethod()
@@ -108,7 +130,17 @@ public class BookSOAP {
             return null;
         }
     }
-
+    // Get a book with specific title.
+    @WebMethod()
+    public Book getBookByBookId(int bookId) {
+        try {
+            Book book = getBookApp().getBooks().getBookByBookId(bookId);
+            return book;
+        } catch (Exception e) {
+            System.out.println("error");
+            return null;
+        }
+    }
     // List a new book with details filled.
     @WebMethod()
     public void addBook(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
@@ -140,5 +172,30 @@ public class BookSOAP {
             System.out.println("error");
         }
     }
+    // Get all reservation booked by a specific user.
+    @WebMethod()
+    public ArrayList<Reservation> getReservationsByUser(String username) {
+        try {
+            ArrayList<Reservation> reservationlist = getReservationApp().getReservations().getReservationsByUsername(username);
+            return reservationlist;
+        } catch (Exception e) {
+            System.out.println("error");
+            return null;
+        }
+    }
+    // List a new book with details filled.
+    @WebMethod()
+    public void addReservation(int bookId, String booktitle, String username, String email) {
+        try {
+            Reservation reservation = new Reservation(bookId, booktitle, username, email);
+            Reservations reservations = getReservationApp().getReservations();
+            reservations.addReservation(reservation);
 
+            String filepath = getReservationApp().getFilePath();
+            getReservationApp().updateXML(reservations, filepath);
+
+        } catch (Exception e) {
+            System.out.println("error");
+        }
+    } 
 }

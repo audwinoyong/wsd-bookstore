@@ -10,17 +10,23 @@
 <message name="getDiaryAppResponse">
 <part name="parameters" element="tns:getDiaryAppResponse"/>
 </message>
+<message name="getReservationsByUser">
+<part name="parameters" element="tns:getReservationsByUser"/>
+</message>
+<message name="getReservationsByUserResponse">
+<part name="parameters" element="tns:getReservationsByUserResponse"/>
+</message>
+<message name="addBook">
+<part name="parameters" element="tns:addBook"/>
+</message>
+<message name="addBookResponse">
+<part name="parameters" element="tns:addBookResponse"/>
+</message>
 <message name="deleteBook">
 <part name="parameters" element="tns:deleteBook"/>
 </message>
 <message name="deleteBookResponse">
 <part name="parameters" element="tns:deleteBookResponse"/>
-</message>
-<message name="fetchBooks">
-<part name="parameters" element="tns:fetchBooks"/>
-</message>
-<message name="fetchBooksResponse">
-<part name="parameters" element="tns:fetchBooksResponse"/>
 </message>
 <message name="getBooksByUser">
 <part name="parameters" element="tns:getBooksByUser"/>
@@ -34,24 +40,46 @@
 <message name="userLoginResponse">
 <part name="parameters" element="tns:userLoginResponse"/>
 </message>
-<message name="addBook">
-<part name="parameters" element="tns:addBook"/>
+<message name="getBookByBookId">
+<part name="parameters" element="tns:getBookByBookId"/>
 </message>
-<message name="addBookResponse">
-<part name="parameters" element="tns:addBookResponse"/>
+<message name="getBookByBookIdResponse">
+<part name="parameters" element="tns:getBookByBookIdResponse"/>
+</message>
+<message name="fetchBooks">
+<part name="parameters" element="tns:fetchBooks"/>
+</message>
+<message name="fetchBooksResponse">
+<part name="parameters" element="tns:fetchBooksResponse"/>
+</message>
+<message name="getReservationApp">
+<part name="parameters" element="tns:getReservationApp"/>
+</message>
+<message name="getReservationAppResponse">
+<part name="parameters" element="tns:getReservationAppResponse"/>
+</message>
+<message name="addReservation">
+<part name="parameters" element="tns:addReservation"/>
+</message>
+<message name="addReservationResponse">
+<part name="parameters" element="tns:addReservationResponse"/>
 </message>
 <portType name="BookSOAP">
 <operation name="getDiaryApp">
 <input wsam:Action="http://soap.wsd.uts/BookSOAP/getDiaryAppRequest" message="tns:getDiaryApp"/>
 <output wsam:Action="http://soap.wsd.uts/BookSOAP/getDiaryAppResponse" message="tns:getDiaryAppResponse"/>
 </operation>
+<operation name="getReservationsByUser">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/getReservationsByUserRequest" message="tns:getReservationsByUser"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/getReservationsByUserResponse" message="tns:getReservationsByUserResponse"/>
+</operation>
+<operation name="addBook">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/addBookRequest" message="tns:addBook"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/addBookResponse" message="tns:addBookResponse"/>
+</operation>
 <operation name="deleteBook">
 <input wsam:Action="http://soap.wsd.uts/BookSOAP/deleteBookRequest" message="tns:deleteBook"/>
 <output wsam:Action="http://soap.wsd.uts/BookSOAP/deleteBookResponse" message="tns:deleteBookResponse"/>
-</operation>
-<operation name="fetchBooks">
-<input wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksRequest" message="tns:fetchBooks"/>
-<output wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksResponse" message="tns:fetchBooksResponse"/>
 </operation>
 <operation name="getBooksByUser">
 <input wsam:Action="http://soap.wsd.uts/BookSOAP/getBooksByUserRequest" message="tns:getBooksByUser"/>
@@ -61,9 +89,21 @@
 <input wsam:Action="http://soap.wsd.uts/BookSOAP/userLoginRequest" message="tns:userLogin"/>
 <output wsam:Action="http://soap.wsd.uts/BookSOAP/userLoginResponse" message="tns:userLoginResponse"/>
 </operation>
-<operation name="addBook">
-<input wsam:Action="http://soap.wsd.uts/BookSOAP/addBookRequest" message="tns:addBook"/>
-<output wsam:Action="http://soap.wsd.uts/BookSOAP/addBookResponse" message="tns:addBookResponse"/>
+<operation name="getBookByBookId">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/getBookByBookIdRequest" message="tns:getBookByBookId"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/getBookByBookIdResponse" message="tns:getBookByBookIdResponse"/>
+</operation>
+<operation name="fetchBooks">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksRequest" message="tns:fetchBooks"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/fetchBooksResponse" message="tns:fetchBooksResponse"/>
+</operation>
+<operation name="getReservationApp">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/getReservationAppRequest" message="tns:getReservationApp"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/getReservationAppResponse" message="tns:getReservationAppResponse"/>
+</operation>
+<operation name="addReservation">
+<input wsam:Action="http://soap.wsd.uts/BookSOAP/addReservationRequest" message="tns:addReservation"/>
+<output wsam:Action="http://soap.wsd.uts/BookSOAP/addReservationResponse" message="tns:addReservationResponse"/>
 </operation>
 </portType>
 <binding name="BookSOAPPortBinding" type="tns:BookSOAP">
@@ -77,7 +117,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="deleteBook">
+<operation name="getReservationsByUser">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -86,7 +126,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="fetchBooks">
+<operation name="addBook">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="deleteBook">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -113,7 +162,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="addBook">
+<operation name="getBookByBookId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="fetchBooks">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getReservationApp">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="addReservation">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

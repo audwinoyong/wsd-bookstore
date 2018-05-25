@@ -20,7 +20,7 @@ public class BookSOAPClient {
         Scanner scanner = new Scanner(System.in);
         String select;
         User user = null;
-        String username;
+        String username = "";
         String email;
         do {
             System.out.println("===========================");
@@ -32,6 +32,8 @@ public class BookSOAPClient {
                 System.out.println("v. View Books");
                 System.out.println("l. List a Book");
                 System.out.println("d. Delete a Book");
+                System.out.println("r. View Reservations");
+                System.out.println("b. Reserve a Book");
                 System.out.println("o. Logout");
                 System.out.println("x. Exit");
                 System.out.println("");
@@ -50,9 +52,11 @@ public class BookSOAPClient {
                     List<Book> books = bookSOAP.fetchBooks().getBook();
                     System.out.println("List of books:");
                     for (Book book : books) {
+                        System.out.println("Book ID: " + book.getBookId());
                         System.out.println("Book Title: " + book.getBooktitle());
                         System.out.println("Book Author: " + book.getAuthor());
-                        System.out.println("Book Category: " + book.getCategory() + "\n");
+                        System.out.println("Book Category: " + book.getCategory());
+                        System.out.println("Book Availability: " + book.getAvailablilty() + "\n");
                     }
                     break;
 
@@ -86,6 +90,39 @@ public class BookSOAPClient {
 
                         System.out.println("Book is listed successfully");
                         bookSOAP.addBook(title, author, category, condition, isbn, publishYear, publisher, user.getName(), abst);
+                    }
+                    break;
+                case "r": // Display all the reservation made by user.
+                    List<Reservation> reservations = bookSOAP.getReservationsByUser(username);
+                    if (reservations.isEmpty()) {
+                        System.out.println("You have not reserved a book yet.");
+
+                    }
+                    else {
+                    System.out.println("List of Reservations:");
+                    for (Reservation reservation : reservations) {
+                        System.out.println("Book Id: " + reservation.getBookId());
+                        System.out.println("Book Title: " + reservation.getBooktitle());
+                        System.out.println("Booked by : " + reservation.getUsername());
+                        System.out.println("Email: " + reservation.getEmail() + "\n");
+                    }
+                    }
+                    break;
+
+                case "b": // Ask Lister for book information and add the book to the list.
+                    if (user != null) {
+                        System.out.println("Enter the Book id you wish to reserve");
+                        int bookId =  scanner.nextInt();
+                        scanner.nextLine();
+                        String booktitle = bookSOAP.getBookByBookId(bookId).getBooktitle();
+
+                        username = user.getName();
+                        email = user.getEmail();
+
+
+                        System.out.println("Book has been reserved successfully");
+                     
+                        bookSOAP.addReservation(bookId, booktitle, username, email );
                     }
                     break;
                 case "d": // Delete a book by its title.
