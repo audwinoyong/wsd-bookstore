@@ -10,6 +10,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>List New Book</title>
+
+        <style>
+            table td, th { padding-right: 50px; }
+        </style>
     </head>
 
     <jsp:include page="navbar.jsp"/>
@@ -24,64 +28,64 @@
                 </ol>
             </nav>
 
-            <div class="wrapper" style="text-align: left;">
+            <div class="wrapper" style="width: 500px; text-align: left">
                 <form action="booklistComplete.jsp" method="POST">
                     <table align="center">
                         <tr>
-                            <td>Book title:</td>
+                            <td>Book Title:</td>
                             <td>
-                                <input name="booktitle" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="booktitle" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
                             <td>Author:</td>
                             <td>
-                                <input name="author" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="author" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
                             <td>Category:</td>
                             <td>
-                                <input name="category" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="category" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
-                            <td>Book condition:</td>
+                            <td>Condition:</td>
                             <td>
-                                <input name="condition" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="condition" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
-                            <td>Book ISBN:</td>
+                            <td>ISBN:</td>
                             <td>
-                                <input name="isbn" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="isbn" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
-                            <td>Book publish year:</td>
+                            <td>Year of Publication:</td>
                             <td>
-                                <input name="publishYear" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="publishYear" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
-                            <td>Book publisher:</td>
+                            <td>Publisher:</td>
                             <td>
-                                <input name="publisher" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="publisher" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
-                            <td>Book abstract:</td>
+                            <td>Abstract:</td>
                             <td>
-                                <input name="abst" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="abst" type="text" class="form-control">
                             </td>
                         </tr>
                         <tr>
 
                         <tr>
-                            <td align="center"><input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />
+                            <td align="center"><input type="button" class="btn btn-warning btn-sm" value="Go Back!" onclick="history.back(-1)" />
                             </td>
                             <td align="center">
-                                <input class="form-control" type="Submit" value="Submit">
+                                <input class="btn btn-primary btn-block" type="Submit" value="Submit">
                             </td>
                         </tr>
 

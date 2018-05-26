@@ -50,16 +50,15 @@
                 </ol>
             </nav>
 
-            <div class="wrapper" style="text-align: left;">
-
+            <div class="wrapper">
                 <c:import url="WEB-INF/result3.xml" var="inputDoc" />
                 <c:import url="WEB-INF/reservationlist.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
                 </x:transform>
 
-                <br><input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />
+                <br>
+                <input type="button" class="btn btn-warning btn-sm" value="Go Back!" onclick="history.back(-1)" />
                 <a class="btn btn-primary btn-sm"  href="main.jsp">Go to Main</a>
-
             </div>
         </div>
     </center>

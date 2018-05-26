@@ -15,6 +15,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>List New Book Complete</title>
+
+        <style>
+            table td, th { padding-right: 50px; padding-bottom: 5px }
+        </style>
     </head>
 
     <jsp:include page="navbar.jsp"/>
@@ -50,39 +54,39 @@
 
             <table align="center">
                 <tr>
-                    <td>Book title:</td>
+                    <td style="font-weight: bold;">Book Title:</td>
                     <td><%=booktitle%></td>
                 </tr>
                 <tr>
-                    <td>Author:</td>
+                    <td style="font-weight: bold;">Author:</td>
                     <td><%=author%></td>
                 </tr>
                 <tr>
-                    <td>Category:</td>
+                    <td style="font-weight: bold;">Category:</td>
                     <td><%=category%></td>
                 </tr>
                 <tr>
-                    <td>Condition:</td>
+                    <td style="font-weight: bold;">Condition:</td>
                     <td><%=condition%></td>
                 </tr>
                 <tr>
-                    <td>ISBN:</td>
+                    <td style="font-weight: bold;">ISBN:</td>
                     <td><%=isbn%></td>
                 </tr>
                 <tr>
-                    <td>Publish year:</td>
+                    <td style="font-weight: bold;">Year of Publication:</td>
                     <td><%=publishYear%></td>
                 </tr>
                 <tr>
-                    <td>Publisher:</td>
+                    <td style="font-weight: bold;">Publisher:</td>
                     <td><%=publisher%></td>
                 </tr>
                 <tr>
-                    <td>Abstract:</td>
+                    <td style="font-weight: bold;">Abstract:</td>
                     <td><%=abst%></td>
                 </tr>
                 <tr>
-                    <td>Your name:</td>
+                    <td style="font-weight: bold;">Your Name:</td>
                     <td><%=username%></td>
                 </tr>
             </table>

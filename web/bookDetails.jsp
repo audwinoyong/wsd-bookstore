@@ -66,16 +66,16 @@
                 </ol>
             </nav>
 
-            <div class="wrapper" style="text-align: left;">
+            <div class="wrapper">
                 <form action="bookDetails.jsp" method="POST">
-                    <table class="table-responsive">
+                    <table class="table-responsive" style="text-align: left;">
                         <tr>
                             <td>
                                 <select class="form-control" name="select" id="select">
-                                    <option value=""> Choose by:</option>
-                                    <option value="bookstitle">book title</option>
-                                    <option value="username">username</option>
-                                    <option value="Available">available only</option>
+                                    <option value="">Choose by:</option>
+                                    <option value="bookstitle">Book Title</option>
+                                    <option value="username">Username</option>
+                                    <option value="Available">Available Only</option>
                                 </select>
                             </td>
                             <td>
@@ -87,13 +87,14 @@
                         </tr>
                     </table>
                 </form>
+                <br>
                 <!-- Display results after transformation of xml into html by xslt -->
                 <c:import url="WEB-INF/result2.xml" var="inputDoc" />
                 <c:import url="WEB-INF/bookdetail.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
                 </x:transform>
                 <br>
-                <input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />
+                <input type="button" class="btn btn-warning btn-sm" value="Go Back!" onclick="history.back(-1)" />
             </div>
         </div>
     </center>

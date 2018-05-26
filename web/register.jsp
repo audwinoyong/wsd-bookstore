@@ -28,7 +28,7 @@
     <center>
         <div class="container">
             <!-- Header -->
-            <div class="wrapper" style="width:500px; text-align: left">
+            <div class="wrapper" style="width: 500px; text-align: left">
                 <br>
                 <h4 class="card-title font-weight-monospace">Register into WSD Bookstore</h4>
                 <p class="font-weight-light">Enter your details below:

@@ -4,12 +4,20 @@
     <xsl:output method="html"/>
     <xsl:template match="/">
         <html>
+            <head>
+                <style>
+                    table { width: 100%; border-collapse: collapse; }
+                    table.reservation td, th { border: solid 1px black; }
+                    table.reservation th { text-align: center; }
+                    .number { text-align: right; }
+                </style>
+            </head>
             <body>
-                <table>
+                <table class="reservation">
                     <thead>
                         <tr>
                             <th>Book Id</th>
-                            <th>Book title</th>
+                            <th>Book Title</th>
                             <th>Username</th>
                             <th>User Email</th>
                         </tr>
@@ -24,10 +32,18 @@
 
     <xsl:template match="reservation">
         <tr>
-            <td><xsl:value-of select="bookId"/></td>
-            <td><xsl:value-of select="booktitle"/></td>
-            <td><xsl:value-of select="username"/></td>
-            <td><xsl:value-of select="email"/></td>
+            <td>
+                <xsl:value-of select="bookId"/>
+            </td>
+            <td>
+                <xsl:value-of select="booktitle"/>
+            </td>
+            <td>
+                <xsl:value-of select="username"/>
+            </td>
+            <td>
+                <xsl:value-of select="email"/>
+            </td>
         </tr>
     </xsl:template>
 

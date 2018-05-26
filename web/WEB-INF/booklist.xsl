@@ -4,16 +4,24 @@
     <xsl:output method="html"/>
     <xsl:template match="/">
         <html>
+            <head>
+                <style>
+                    table { width: 100%; border-collapse: collapse; }
+                    table.books td, th { border: solid 1px black; }
+                    table.books th { text-align: center; }
+                    .number { text-align: right; }
+                </style>
+            </head>
             <body>
-                <table>
+                <table class="books">
                     <thead>
                         <tr>
-                            <th>Book title</th>
+                            <th>Book Title</th>
                             <th>Author</th>
                             <th>Category</th>
                             <th>Condition</th>
                             <th>ISBN</th>
-                            <th>PublishYear</th>
+                            <th>Year of Publication</th>
                             <th>Publisher</th>
                             <th>Username</th>
                             <th>Abstract</th>
@@ -30,29 +38,53 @@
     </xsl:template>
 
     <xsl:template match="book">
-       <xsl:variable name="status" select="availability"/>
+        <xsl:variable name="status" select="availability"/>
         <xsl:variable name="href1">reservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>
         <xsl:variable name="href2">deleteBook.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>
 
         <tr>
-            <td><xsl:value-of select="booktitle"/></td>
-            <td><xsl:value-of select="author"/></td>
-            <td><xsl:value-of select="category"/></td>
-            <td><xsl:value-of select="condition"/></td>
-            <td><xsl:value-of select="isbn"/></td>
-            <td><xsl:value-of select="publishYear"/></td>
-            <td><xsl:value-of select="publisher"/></td>
-            <td><xsl:value-of select="username"/></td>
-            <td><xsl:value-of select="abstract"/></td>
+            <td>
+                <xsl:value-of select="booktitle"/>
+            </td>
+            <td>
+                <xsl:value-of select="author"/>
+            </td>
+            <td>
+                <xsl:value-of select="category"/>
+            </td>
+            <td>
+                <xsl:value-of select="condition"/>
+            </td>
+            <td>
+                <xsl:value-of select="isbn"/>
+            </td>
+            <td class="number">
+                <xsl:value-of select="publishYear"/>
+            </td>
+            <td>
+                <xsl:value-of select="publisher"/>
+            </td>
+            <td>
+                <xsl:value-of select="username"/>
+            </td>
+            <td>
+                <xsl:value-of select="abstract"/>
+            </td>
             <xsl:choose>
-                 <xsl:when test="$status = 'Reserved'">
-                     <td><a href="{$href1}"><xsl:value-of select="availability"/></a></td>
-                 </xsl:when>
-                 <xsl:otherwise>
-                     <td>Not reserved</td>
-                 </xsl:otherwise>
-             </xsl:choose>
-            <td><a href="{$href2}">Delete</a></td>
+                <xsl:when test="$status = 'Reserved'">
+                    <td>
+                        <a href="{$href1}">
+                            <xsl:value-of select="availability"/>
+                        </a>
+                    </td>
+                </xsl:when>
+                <xsl:otherwise>
+                    <td>Not reserved</td>
+                </xsl:otherwise>
+            </xsl:choose>
+            <td>
+                <a href="{$href2}">Delete</a>
+            </td>
         </tr>
     </xsl:template>
 </xsl:stylesheet>

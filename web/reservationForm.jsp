@@ -11,9 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserve Book</title>
+
+        <style>
+            table td, th { padding-right: 50px; }
+        </style>
     </head>
 
     <jsp:include page="navbar.jsp"/>
+    
     <%
         User user = (User) session.getAttribute("user");
         int bookId = Integer.parseInt(request.getParameter("bookId"));
@@ -32,27 +37,27 @@
                 </ol>
             </nav>
 
-            <div class="wrapper" style="text-align: left;">
+            <div class="wrapper" style="width: 500px; text-align: left">
                 <form action="reservationComplete.jsp" method="POST">
                     <table align="center">
                         <tr>
-                            <td>Your Full name:</td><td>
-                                <input name="fullName" type="text" style="margin-left:10px;margin-right:10px;" value ="<%= (user != null ? user.getName() : "")%>">
+                            <td>Your Full Name:</td><td>
+                                <input name="fullName" type="text" class="form-control" value ="<%= (user != null ? user.getName() : "")%>">
                             </td>
                         </tr>
                         <tr>
                             <td>Your Email:</td>
                             <td>
-                                <input name="email" type="text" style="margin-left:10px;margin-right:10px;">
+                                <input name="email" type="text" class="form-control">
                                 <input name="bookId" type="hidden" value="<%=bookId%>">
                                 <input name="booktitle" type="hidden" value="<%=booktitle%>">
                             </td>
                         </tr>
                         <tr>
-                            <td align="center"><input type="button" class="btn btn-primary btn-sm" value="Go Back!" onclick="history.back(-1)" />
+                            <td align="center"><input type="button" class="btn btn-warning btn-sm" value="Go Back!" onclick="history.back(-1)" />
                             </td>
                             <td align="center">
-                                <input class="form-control" type="Submit" value="Submit">
+                                <input class="btn btn-primary btn-block" type="Submit" value="Submit">
                             </td>
                         </tr>
                     </table>

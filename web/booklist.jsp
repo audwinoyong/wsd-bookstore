@@ -52,16 +52,16 @@
                 </ol>
             </nav>
 
-            <div class="wrapper" style="text-align: left;">
+            <div class="wrapper">
                 <form action="bookDetails.jsp" method="POST">
-                    <table class="table-responsive">
+                    <table class="table-responsive" style="text-align: left;">
                         <tr>
                             <td>
                                 <select class="form-control" name="select" id="select">
-                                    <option value=""> Choose by:</option>
-                                    <option value="bookstitle">book title</option>
-                                    <option value="username">username</option>
-                                    <option value="Available">available only</option>
+                                    <option value="">Choose by:</option>
+                                    <option value="bookstitle">Book Title</option>
+                                    <option value="username">Username</option>
+                                    <option value="Available">Available Only</option>
                                 </select>
                             </td>
                             <td>
@@ -73,6 +73,7 @@
                         </tr>
                     </table>
                 </form>
+                <br>
 
                 <c:import url="WEB-INF/result2.xml" var="inputDoc" />
                 <c:import url="WEB-INF/booklist.xsl" var="stylesheet" />

@@ -13,6 +13,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reservation Complete</title>
+
+        <style>
+            table td, th { padding-right: 50px; padding-bottom: 5px }
+        </style>
     </head>
 
     <jsp:include page="navbar.jsp"/>
@@ -50,21 +54,21 @@
         <div class="container">
             <p class="alert alert-success" style="text-align: center">Reservation complete!</p>
 
-            <table align="center">
+            <table>
                 <tr>
-                    <td>Your book Id:</td>
+                    <td style="font-weight: bold;">Your Book Id:</td>
                     <td><%=bookId%></td>
                 </tr>
                 <tr>
-                    <td>Your book title:</td>
+                    <td style="font-weight: bold;">Your Book Title:</td>
                     <td><%=booktitle%></td>
                 </tr>
                 <tr>
-                    <td>Your name:</td>
+                    <td style="font-weight: bold;">Your Name:</td>
                     <td><%=username%></td>
                 </tr>
                 <tr>
-                    <td>Your email</td>
+                    <td style="font-weight: bold;">Your Email:</td>
                     <td><%=email%></td>
                 </tr>
 

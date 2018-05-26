@@ -31,6 +31,8 @@
         bookApp.setFilePath(resultPath);
         Books results = books.getBooksList(books);
 
+        int resultsCount = books.getBooksListCount(books);
+
         bookApp.updateXML(results, resultPath);
     %>
     <body>
@@ -51,8 +53,8 @@
                             <td>
                                 <select class="form-control" name="select" id="select">
                                     <option value="">Choose by:</option>
-                                    <option value="booktitle">book title</option>
-                                    <option value="username">username</option>
+                                    <option value="booktitle">Book Title</option>
+                                    <option value="username">Username</option>
                                 </select>
                             </td>
                             <td>
@@ -70,6 +72,8 @@
                 <c:import url="WEB-INF/books.xsl" var="stylesheet" />
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
                 </x:transform>
+
+                <!--<p><%= resultsCount%></p>-->
             </div>
         </div>
     </center>

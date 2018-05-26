@@ -35,7 +35,7 @@
 
             <div class="wrapper" style="width:500px; text-align: center">
                 <br><a class="btn btn-primary btn-sm" href="booklist.jsp">Back to My Listings</a>
-                <a class="btn btn-primary btn-sm"  href="main.jsp">Go to Main</a>
+                <a class="btn btn-primary btn-sm" href="main.jsp">Go to Main</a>
             </div>
         </div>
     </center>

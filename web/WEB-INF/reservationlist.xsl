@@ -4,13 +4,21 @@
     <xsl:output method="html"/>
     <xsl:template match="/">
         <html>
+            <head>
+                <style>
+                    table { width: 100%; border-collapse: collapse; }
+                    table.reservation td, th { border: solid 1px black; }
+                    table.reservation th { text-align: center; }
+                    .number { text-align: right; }
+                </style>
+            </head>
             <body>
-                <table>
+                <table class="reservation">
                     <thead>
                         <tr>
                             <th>Book ID</th>
-                            <th>Book title</th>
-                            <th>Delete</th>
+                            <th>Book Title</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,9 +33,15 @@
         <xsl:variable name="href">deleteReservation.jsp?bookId=<xsl:value-of select="bookId"/></xsl:variable>
 
         <tr>
-            <td><xsl:value-of select="bookId"/></td>
-            <td><xsl:value-of select="booktitle"/></td>
-            <td><a href="{$href}">Delete</a></td>
+            <td>
+                <xsl:value-of select="bookId"/>
+            </td>
+            <td>
+                <xsl:value-of select="booktitle"/>
+            </td>
+            <td>
+                <a href="{$href}">Cancel</a>
+            </td>
         </tr>
     </xsl:template>
 </xsl:stylesheet>
