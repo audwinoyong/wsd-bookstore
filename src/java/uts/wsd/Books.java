@@ -23,6 +23,12 @@ public class Books implements Serializable {
         return list;
     }
 
+    // function to set the list of books 
+    // based on the filter parameters in the REST web service.
+    public void setBooks(ArrayList<Book> list) {
+        this.list = list;
+    }
+
     public void addBook(Book book) {
         list.add(book);
     }
@@ -49,8 +55,8 @@ public class Books implements Serializable {
         }
         return null;
     }
-    // function to get book with maching title
 
+    // function to get book with maching title
     public Book getBookByTitle(String title) {
         for (Book book : list) {
             if (book.getBooktitle().equals(title)) { //return a book with matching book title
@@ -82,7 +88,7 @@ public class Books implements Serializable {
         return bookList;
     }
 
-    //return books that are available   
+    //return books that are available
     public Books getAvailability(String availability) {
         Books books = new Books();
         for (Book book : list) {

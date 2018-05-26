@@ -32,7 +32,7 @@
         <booktitle>Romeo and Juliet</booktitle>
         <author>Author Choi</author>
         <category>Science fiction</category>
-        <condition>New</condition>
+        <condition>Good</condition>
         <isbn>1-23451-234-5</isbn>
         <publishYear>2018</publishYear>
         <publisher>Jimmy Rhee</publisher>
@@ -45,7 +45,7 @@
         <booktitle>Good mates</booktitle>
         <author>Author Choi</author>
         <category>Science fiction</category>
-        <condition>New</condition>
+        <condition>Fair</condition>
         <isbn>1-23451-234-5</isbn>
         <publishYear>2018</publishYear>
         <publisher>Jimmy Rhee</publisher>
@@ -58,7 +58,7 @@
         <booktitle>Triangle</booktitle>
         <author>Author Choi</author>
         <category>Science fiction</category>
-        <condition>New</condition>
+        <condition>Poor</condition>
         <isbn>1-23451-234-5</isbn>
         <publishYear>2018</publishYear>
         <publisher>Jimmy Rhee</publisher>
