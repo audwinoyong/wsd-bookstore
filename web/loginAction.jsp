@@ -76,7 +76,7 @@
 
         <!-- Incorrect password feedback -->
         <div class="container">
-            <p class="alert alert-danger" style="text-align: center"> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+            <p class="alert alert-danger" style="text-align: center"> Email Address or Password is incorrect. Click <a href="login.jsp">here</a> to try again.</p>
         </div>
         <% }%>
 
