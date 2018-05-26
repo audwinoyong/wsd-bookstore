@@ -22,13 +22,13 @@ public class BookSOAPClient {
         User user = null;
         String username = "";
         String email;
-        do {
+        do { // Main system's salutation and menu.
             System.out.println("===========================");
             System.out.println("Welcome to Bookstore");
             System.out.println("Select an option from below");
             System.out.println("===========================");
 
-            if (user != null) {
+            if (user != null) { // display menu for logged in users(listers).
                 System.out.println("v. View Books");
                 System.out.println("l. List a Book");
                 System.out.println("d. Delete a Book");
@@ -39,7 +39,7 @@ public class BookSOAPClient {
                 System.out.println("");
                 System.out.print("Your choice: ");
                 select = scanner.nextLine();
-            } else {
+            } else { // display menu for non logged in users.
                 System.out.println("v. View Books");
                 System.out.println("i. Login");
                 System.out.println("x. Exit");
@@ -94,13 +94,13 @@ public class BookSOAPClient {
                     break;
                 case "r": // Display all the reservation made by user.
                     List<Reservation> reservations = bookSOAP.getReservationsByUser(username);
-                    if (reservations.isEmpty()) {
+                    if (reservations.isEmpty()) { // Display a error message if the lister did not have any reservation.
                         System.out.println("You have not reserved a book yet.");
 
                     }
-                    else {
+                    else { // Display details of reservations if there is at least one.
                     System.out.println("List of Reservations:");
-                    for (Reservation reservation : reservations) {
+                    for (Reservation reservation : reservations) { //List reservations with details.
                         System.out.println("Book Id: " + reservation.getBookId());
                         System.out.println("Book Title: " + reservation.getBooktitle());
                         System.out.println("Booked by : " + reservation.getUsername());
@@ -119,15 +119,13 @@ public class BookSOAPClient {
                         username = user.getName();
                         email = user.getEmail();
 
-
                         System.out.println("Book has been reserved successfully");
-                     
                         bookSOAP.addReservation(bookId, booktitle, username, email );
                     }
                     break;
-                case "d": // Delete a book by its title.
+                case "d": // Delete a book by its book ID.
                     if (user != null) {
-                        System.out.println("Enter the booktitle you want to delete:");
+                        System.out.println("Enter the book ID you want to delete:");
                         String title = scanner.nextLine();
                         bookSOAP.deleteBook(title);
                         System.out.println("Book is deleted successfully");

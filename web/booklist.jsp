@@ -30,24 +30,14 @@
         </jsp:useBean>
 
         <%
-            // Bring books by username
+            // Load books by username
             Books books = bookApp.getBooks();
-            User user = (User) session.getAttribute("user");
+            User user = (User) session.getAttribute("user"); // Set the login user to the session.
 
             String username = user.getName();
-            ArrayList<Book> matches = books.getBooksByUsername(username);
+            ArrayList<Book> matches = books.getBooksByUsername(username); // This arraylist stores books listed by user.
 
-            String select = request.getParameter("select");
-            String search = request.getParameter("search");
-
-            if (select != null) {
-                if (select.equals("booktitle")) {
-                    matches = books.getBooksByTitle(search);
-                } else if (select.equals("username")) {
-                    matches = books.getBooksByUsername(search);
-                }
-            }
-
+            //save search results temporarily in result.xml.
             bookApp.setFilePath(resultPath);
             Books results = bookApp.getBooks();
             results.addAll(matches);
@@ -71,7 +61,7 @@
                                     <option value=""> Choose by:</option>
                                     <option value="bookstitle">book title</option>
                                     <option value="username">username</option>
-                                    <option value="status"></option>
+                                    <option value="Available">available only</option>
                                 </select>
                             </td>
                             <td>

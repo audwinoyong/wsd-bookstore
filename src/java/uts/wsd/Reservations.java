@@ -23,7 +23,7 @@ public class Reservations implements Serializable {
     public void removeReservation(Reservation reservation) {
         list.remove(reservation);
     }
-
+    // this function returns a Reservation that has specific book ID.
     public Reservation getReservationByBookId(int bookId) {
     for (Reservation reservation : list) {
         if (reservation.getBookId() == bookId) {
@@ -32,6 +32,7 @@ public class Reservations implements Serializable {
     }
         return null;
     }
+    // this function returns an arraylist of reservation that has matching book ID.
     public ArrayList<Reservation> getReservationsByBookId(int bookId) {
          ArrayList<Reservation> reservationList = new ArrayList<>();
         for (Reservation reservation : list) {
@@ -41,6 +42,7 @@ public class Reservations implements Serializable {
         }
         return reservationList;
     }
+    // this function returns an arraylist of reservation that has been reserved by a certain user.    
     public ArrayList<Reservation> getReservationsByUsername(String username) {
          ArrayList<Reservation> reservationList = new ArrayList<>();
         for (Reservation reservation : list) {

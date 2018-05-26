@@ -89,14 +89,14 @@ public class BookSOAP {
         }
     }    
 
-    // Login function
+    // Login function checks if there is a lister with email and password provided by a user.
     @WebMethod()
     public User userLogin(String email, String password) {
         try {
-            ArrayList<User> users = getDiaryApp().getUsers().getList();
+            ArrayList<User> users = getDiaryApp().getUsers().getList(); // get a list of user from the xml file using controller.
 
             for (User user : users) {
-                if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                if (user.getEmail().equals(email) && user.getPassword().equals(password)) { // if details are matching, return a lister to login. 
                     return user;
                 }
             }
@@ -145,6 +145,7 @@ public class BookSOAP {
     @WebMethod()
     public void addBook(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
         try {
+            //create a book with details provided by a lister.
             Book book = new Book(booktitle, author, category, condition, isbn, publishYear, publisher, username, abst);
             Books books = getBookApp().getBooks();
             books.addBook(book);
@@ -157,12 +158,12 @@ public class BookSOAP {
         }
     }
 
-    // Delete a book from the list by its title.
+    // Delete a book from the list by its book ID.
     @WebMethod()
-    public void deleteBook(String booktitle) {
+    public void deleteBook(String bookId) {
         try {
             Books books = getBookApp().getBooks();
-            Book book = books.getBookByTitle(booktitle);
+            Book book = books.getBookByTitle(bookId);
             books.removeBook(book);
 
             String filepath = getBookApp().getFilePath();

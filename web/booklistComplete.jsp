@@ -25,7 +25,7 @@
     </jsp:useBean>
 
     <%
-        //List a new book with information filled by lister.
+        //List a new book with information filled by lister from previous page(booklist.jsp)
         User user = (User) session.getAttribute("user");
         String booktitle = request.getParameter("booktitle");
         String author = request.getParameter("author");
@@ -37,6 +37,7 @@
         String username = user.getName();
         String abst = request.getParameter("abst");
 
+        //create new book with corresponding details and save it to xml.
         Book book = new Book(booktitle, author, category, condition, isbn, publishYear, publisher, username, abst);
         bookApp.getBooks().addBook(book);
         bookApp.saveBooks();

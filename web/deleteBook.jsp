@@ -22,7 +22,7 @@
     </jsp:useBean>
 
     <%
-        //Remove book by finding its Id
+        //Remove book by finding its book ID.
         int bookId = Integer.parseInt(request.getParameter("bookId"));
         Book book = bookApp.getBooks().getBookByBookId(bookId);
         bookApp.getBooks().removeBook(book);

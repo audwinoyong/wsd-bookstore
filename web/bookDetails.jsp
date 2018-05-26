@@ -28,32 +28,32 @@
     </jsp:useBean>
 
     <%
-        //Sort books into titles
-        Books books = bookApp.getBooks();
-        String booktitle = request.getParameter("booktitle");
-        ArrayList<Book> matches = books.getBooksByTitle(booktitle);
+        //This page displays after user selecting a book title from main page.
+        Books books = bookApp.getBooks(); //get all the books from the XML file
+        String booktitle = request.getParameter("booktitle"); //receive the title of the book selected
+        ArrayList<Book> matches = books.getBooksByTitle(booktitle); // This arraylist stores books with selected title.
 
         //Passing search options and searching keywords.
-        String select = request.getParameter("select");
-        String search = request.getParameter("search");
+        String select = request.getParameter("select"); //search option e.g.booktitle, username .. etc.
+        String search = request.getParameter("search"); //search keyword e.g. "Romeo and Juliet"
 
-        if (select != null) {
+        if (select != null) { // it only happens when user is searching through the books
             if (select.equals("booktitle")) {
-                matches = books.getBooksByTitle(search);
+                matches = books.getBooksByTitle(search); // find books by title
             } else if (select.equals("username")) {
-                matches = books.getBooksByUsername(search);
+                matches = books.getBooksByUsername(search); // find books by lister
             } else if (select.equals("Available")) {
-                matches = books.getBooksByStatus("Available");
+                matches = books.getBooksByStatus("Available"); // find books available
             }
         }
         if (matches.isEmpty()) {
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("error.jsp"); // if nothing is found, redirect user to error page.
         }
         //save search results temporarily in result.xml.
         bookApp.setFilePath(resultPath);
         Books results = bookApp.getBooks();
         results.addAll(matches);
-        bookApp.updateXML(results, resultPath);
+        bookApp.updateXML(results, resultPath); // update xml where search results are stored temporarily.
     %>
     <body>
     <center>
