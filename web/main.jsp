@@ -52,7 +52,7 @@
                         <tr>
                             <td>
                                 <select class="form-control" name="select" id="select">
-                                    <option value="">Choose by:</option>
+                                    <option value="" disabled selected>Choose by:</option>
                                     <option value="booktitle">Book Title</option>
                                     <option value="username">Username</option>
                                 </select>

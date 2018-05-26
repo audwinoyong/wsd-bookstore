@@ -42,13 +42,13 @@
                     <table align="center">
                         <tr>
                             <td>Your Full Name:</td><td>
-                                <input name="fullName" type="text" class="form-control" value ="<%= (user != null ? user.getName() : "")%>">
+                                <input name="fullName" type="text" class="form-control" value="<%= (user != null ? user.getName() : "")%>" required>
                             </td>
                         </tr>
                         <tr>
                             <td>Your Email:</td>
                             <td>
-                                <input name="email" type="text" class="form-control">
+                                <input name="email" type="text" class="form-control" value="<%= (user != null ? user.getEmail() : "")%>" required>
                                 <input name="bookId" type="hidden" value="<%=bookId%>">
                                 <input name="booktitle" type="hidden" value="<%=booktitle%>">
                             </td>

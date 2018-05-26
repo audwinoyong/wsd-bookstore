@@ -34,49 +34,65 @@
                         <tr>
                             <td>Book Title:</td>
                             <td>
-                                <input name="booktitle" type="text" class="form-control">
+                                <input name="booktitle" type="text" class="form-control" required>
                             </td>
                         </tr>
                         <tr>
                             <td>Author:</td>
                             <td>
-                                <input name="author" type="text" class="form-control">
+                                <input name="author" type="text" class="form-control" required>
                             </td>
                         </tr>
                         <tr>
                             <td>Category:</td>
                             <td>
-                                <input name="category" type="text" class="form-control">
+                                <input name="category" type="text" class="form-control" required>
                             </td>
                         </tr>
                         <tr>
                             <td>Condition:</td>
                             <td>
-                                <input name="condition" type="text" class="form-control">
+                                <select class="form-control" name="condition" id="condition" required>
+                                    <option value="" disabled selected>Choose condition</option>
+                                    <option value="New">New</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Fair">Fair</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
                             <td>ISBN:</td>
                             <td>
-                                <input name="isbn" type="text" class="form-control">
+                                <input name="isbn" type="text" class="form-control" required>
                             </td>
                         </tr>
                         <tr>
                             <td>Year of Publication:</td>
                             <td>
-                                <input name="publishYear" type="text" class="form-control">
+                                <select class="form-control" name="publishYear" id="publishYear" required>
+                                    <option value="" disabled selected>Choose publication year</option>
+                                    <!--JavaScript to dynamically populate options of the last 100 years of the current year-->
+                                    <script>
+                                        var start = new Date().getFullYear() - 100;
+                                        var end = new Date().getFullYear();
+                                        for (var year = end; year >= start; year--) {
+                                            document.write('<option value="' + year + '">' + year + '</option>');
+                                        }
+                                    </script>
+                                </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Publisher:</td>
                             <td>
-                                <input name="publisher" type="text" class="form-control">
+                                <input name="publisher" type="text" class="form-control" required>
                             </td>
                         </tr>
                         <tr>
                             <td>Abstract:</td>
                             <td>
-                                <input name="abst" type="text" class="form-control">
+                                <input name="abst" type="text" class="form-control" required>
                             </td>
                         </tr>
                         <tr>

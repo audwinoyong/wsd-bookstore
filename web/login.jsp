@@ -37,14 +37,14 @@
                     <form method="POST" action="loginAction.jsp">
                         <div class="form-group">
                             <label for="email">Email Address
-                            <c:if test="${emailError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 220px"> <c:out value="${emailError}"/></c:if></span>
+                            <c:if test="${emailError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align: right; margin-left: 220px"> <c:out value="${emailError}"/></c:if></span>
                             </label>
                             <input id="email" type="text" class="form-control" name="email" value="" autofocus="">
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password
-                            <c:if test="${passwordError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align:right; margin-left: 222px"> <c:out value="${passwordError}"/></c:if></span>
+                            <c:if test="${passwordError != null}"> <span class="float-right" style="color: red; font-weight: bold; text-align: right; margin-left: 222px"> <c:out value="${passwordError}"/></c:if></span>
                         </label>
 
                         <div style="position: relative"><input id="password" type="password" class="form-control font-weight-monospace" name="password" data-eye="">
