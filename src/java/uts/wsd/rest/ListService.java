@@ -15,31 +15,29 @@ import uts.wsd.*;
 
 @Path("/reservationApp")
 public class ListService {
+
     @Context
     private ServletContext application;
-    
-    private ReservationApplication getReservationApp() throws JAXBException, IOException
-    {
-        synchronized(application)
-        {
+
+    private ReservationApplication getReservationApp() throws JAXBException, IOException {
+        synchronized (application) {
             ReservationApplication reservationApp = (ReservationApplication) application.getAttribute("reservationApp");
-                    
-            if(reservationApp == null)
-            {
+
+            if (reservationApp == null) {
                 reservationApp = new ReservationApplication();
                 reservationApp.setFilePath(application.getRealPath("WEB-INF/reservation.xml"));
-                application.setAttribute("reservationApp",reservationApp);
+                application.setAttribute("reservationApp", reservationApp);
             }
             return reservationApp;
         }
     }
+
     // Load all reservation
     @GET
     @Path("reservations")
     @Produces(MediaType.APPLICATION_XML)
-    public ArrayList<Reservation> getReservationsList() throws JAXBException, IOException
-    {
+    public ArrayList<Reservation> getReservationsList() throws JAXBException, IOException {
         return getReservationApp().getReservations().getList();
     }
-    
+
 }

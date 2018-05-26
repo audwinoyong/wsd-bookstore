@@ -147,6 +147,4 @@ public class Book implements Serializable {
     public void setAvailability(String availability) {
         this.availability = availability;
     }
-
-
 }

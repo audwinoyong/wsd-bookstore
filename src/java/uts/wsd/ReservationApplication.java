@@ -8,6 +8,10 @@ package uts.wsd;
 import java.io.*;
 import javax.xml.bind.*;
 
+/**
+ *
+ * @author sungrinrhee
+ */
 public class ReservationApplication implements Serializable {
 
     private String filePath;
@@ -61,8 +65,6 @@ public class ReservationApplication implements Serializable {
     public Reservations getReservations() {
         return reservations;
     }
-
-
 
     public void setReservation(Reservations reservations) {
         this.reservations = reservations;

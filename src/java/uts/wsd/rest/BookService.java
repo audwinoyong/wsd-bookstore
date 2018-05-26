@@ -46,6 +46,7 @@ public class BookService {
     public Books fetchBooks() throws JAXBException, IOException {
         return getBookApp().getBooks();
     }
+
     // Get all books filtered by its username.
     @GET
     @Path("books/username/{username}")
@@ -53,6 +54,7 @@ public class BookService {
     public Books getBooksByUserName(@PathParam("username") String username) throws Exception {
         return getBookApp().getBooks().getBooklistByUsername(username);
     }
+
     // Get all books filtered by its status.
     @GET
     @Path("books/availability/{availability}")
@@ -60,6 +62,7 @@ public class BookService {
     public Books getBooksByAvailability(@PathParam("availability") String availability) throws Exception {
         return getBookApp().getBooks().getAvailability(availability);
     }
+
     // Get all books filtered by its condition.
     @GET
     @Path("books/condition/{condition}")
@@ -67,6 +70,7 @@ public class BookService {
     public Books getBooksByCondition(@PathParam("condition") String condition) throws Exception {
         return getBookApp().getBooks().getCondition(condition);
     }
+
     // Get all books filtered by its title.
     @GET
     @Path("books/title/{title}")

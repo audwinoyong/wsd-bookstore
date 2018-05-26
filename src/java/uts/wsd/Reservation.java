@@ -26,7 +26,6 @@ public class Reservation implements Serializable {
     @XmlElement(name = "email")
     private String email;
 
-
     public Reservation() {
     }
 
@@ -68,7 +67,5 @@ public class Reservation implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 
 }

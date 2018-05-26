@@ -11,10 +11,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * This class provides validation of the inputs within the login and register forms.
- * Regular expressions from the XML Schema's are used for validating the inputs
- * before being saved into the XMLs.
- * 
+ * This class provides validation of the inputs within the login and register
+ * forms. Regular expressions from the XML Schema's are used for validating the
+ * inputs before being saved into the XMLs.
+ *
  * @author Audwin
  */
 public class Validator implements Serializable {

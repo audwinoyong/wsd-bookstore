@@ -48,6 +48,7 @@ public class BookApplication implements Serializable {
         m.marshal(books, fout);
         fout.close();
     }
+
     // Save "books" object (Java) to books.xml file
     public void saveBooks() throws JAXBException, IOException {
         JAXBContext jc = JAXBContext.newInstance(Books.class);
@@ -61,8 +62,6 @@ public class BookApplication implements Serializable {
     public Books getBooks() {
         return books;
     }
-
-
 
     public void setBookstore(Books books) {
         this.books = books;
