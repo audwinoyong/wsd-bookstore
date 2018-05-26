@@ -31,7 +31,7 @@
         bookApp.setFilePath(resultPath);
         Books results = books.getBooksList(books);
 
-        int resultsCount = books.getBooksListCount(books);
+//        int resultsCount = books.getBooksListCount(books);
 
         bookApp.updateXML(results, resultPath);
     %>
@@ -73,7 +73,7 @@
                 <x:transform xml = "${inputDoc}" xslt = "${stylesheet}">
                 </x:transform>
 
-                <!--<p><%= resultsCount%></p>-->
+                <!--<p><//%= resultsCount%></p>-->
             </div>
         </div>
     </center>

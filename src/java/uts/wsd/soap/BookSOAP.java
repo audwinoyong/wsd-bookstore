@@ -70,6 +70,7 @@ public class BookSOAP {
             return null;
         }
     }
+
     // Reservation controller
     public ReservationApplication getReservationApp() {
         try {
@@ -87,7 +88,7 @@ public class BookSOAP {
             System.out.println("error");
             return null;
         }
-    }    
+    }
 
     // Login function checks if there is a lister with email and password provided by a user.
     @WebMethod()
@@ -117,7 +118,6 @@ public class BookSOAP {
             return null;
         }
     }
-    
 
     // Get all books listed by specific user.
     @WebMethod()
@@ -130,6 +130,7 @@ public class BookSOAP {
             return null;
         }
     }
+
     // Get a book with specific title.
     @WebMethod()
     public Book getBookByBookId(int bookId) {
@@ -141,9 +142,10 @@ public class BookSOAP {
             return null;
         }
     }
+
     // List a new book with details filled.
     @WebMethod()
-    public void addBook(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
+    public Book addBook(String booktitle, String author, String category, String condition, String isbn, int publishYear, String publisher, String username, String abst) {
         try {
             //create a book with details provided by a lister.
             Book book = new Book(booktitle, author, category, condition, isbn, publishYear, publisher, username, abst);
@@ -152,15 +154,17 @@ public class BookSOAP {
 
             String filepath = getBookApp().getFilePath();
             getBookApp().updateXML(books, filepath);
-
+            return book;
+            
         } catch (Exception e) {
             System.out.println("error");
+            return null;
         }
     }
 
     // Delete a book from the list by its book ID.
     @WebMethod()
-    public void deleteBook(String bookId) {
+    public Book deleteBook(String bookId) {
         try {
             Books books = getBookApp().getBooks();
             Book book = books.getBookByTitle(bookId);
@@ -168,11 +172,14 @@ public class BookSOAP {
 
             String filepath = getBookApp().getFilePath();
             getBookApp().updateXML(books, filepath);
+            return book;
 
         } catch (Exception e) {
             System.out.println("error");
+            return null;
         }
     }
+
     // Get all reservation booked by a specific user.
     @WebMethod()
     public ArrayList<Reservation> getReservationsByUser(String username) {
@@ -184,9 +191,10 @@ public class BookSOAP {
             return null;
         }
     }
+
     // List a new book with details filled.
     @WebMethod()
-    public void addReservation(int bookId, String booktitle, String username, String email) {
+    public Reservation addReservation(int bookId, String booktitle, String username, String email) {
         try {
             Reservation reservation = new Reservation(bookId, booktitle, username, email);
             Reservations reservations = getReservationApp().getReservations();
@@ -194,9 +202,11 @@ public class BookSOAP {
 
             String filepath = getReservationApp().getFilePath();
             getReservationApp().updateXML(reservations, filepath);
+            return reservation;
 
         } catch (Exception e) {
             System.out.println("error");
+            return null;
         }
-    } 
+    }
 }

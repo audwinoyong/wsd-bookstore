@@ -56,7 +56,7 @@ public class BookSOAPClient {
                         System.out.println("Book Title: " + book.getBooktitle());
                         System.out.println("Book Author: " + book.getAuthor());
                         System.out.println("Book Category: " + book.getCategory());
-                        System.out.println("Book Availability: " + book.getAvailablilty() + "\n");
+                        System.out.println("Book Availability: " + book.getAvailability() + "\n");
                     }
                     break;
 
@@ -92,27 +92,27 @@ public class BookSOAPClient {
                         bookSOAP.addBook(title, author, category, condition, isbn, publishYear, publisher, user.getName(), abst);
                     }
                     break;
+
                 case "r": // Display all the reservation made by user.
                     List<Reservation> reservations = bookSOAP.getReservationsByUser(username);
                     if (reservations.isEmpty()) { // Display a error message if the lister did not have any reservation.
                         System.out.println("You have not reserved a book yet.");
 
-                    }
-                    else { // Display details of reservations if there is at least one.
-                    System.out.println("List of Reservations:");
-                    for (Reservation reservation : reservations) { //List reservations with details.
-                        System.out.println("Book Id: " + reservation.getBookId());
-                        System.out.println("Book Title: " + reservation.getBooktitle());
-                        System.out.println("Booked by : " + reservation.getUsername());
-                        System.out.println("Email: " + reservation.getEmail() + "\n");
-                    }
+                    } else { // Display details of reservations if there is at least one.
+                        System.out.println("List of Reservations:");
+                        for (Reservation reservation : reservations) { //List reservations with details.
+                            System.out.println("Book Id: " + reservation.getBookId());
+                            System.out.println("Book Title: " + reservation.getBooktitle());
+                            System.out.println("Booked by : " + reservation.getUsername());
+                            System.out.println("Email: " + reservation.getEmail() + "\n");
+                        }
                     }
                     break;
 
                 case "b": // Ask Lister for book information and add the book to the list.
                     if (user != null) {
                         System.out.println("Enter the Book id you wish to reserve");
-                        int bookId =  scanner.nextInt();
+                        int bookId = scanner.nextInt();
                         scanner.nextLine();
                         String booktitle = bookSOAP.getBookByBookId(bookId).getBooktitle();
 
@@ -120,9 +120,10 @@ public class BookSOAPClient {
                         email = user.getEmail();
 
                         System.out.println("Book has been reserved successfully");
-                        bookSOAP.addReservation(bookId, booktitle, username, email );
+                        bookSOAP.addReservation(bookId, booktitle, username, email);
                     }
                     break;
+
                 case "d": // Delete a book by its book ID.
                     if (user != null) {
                         System.out.println("Enter the book ID you want to delete:");
@@ -131,6 +132,7 @@ public class BookSOAPClient {
                         System.out.println("Book is deleted successfully");
                     }
                     break;
+
                 case "i": // Authentication(Login) asking user's email address and password.
                     System.out.print("Enter email address: ");
                     email = scanner.nextLine();
@@ -149,8 +151,10 @@ public class BookSOAPClient {
                     System.out.println("Logged out successfully.");
                     user = null;
                     break;
+
                 case "x": // Exit the program.
                     break;
+
                 default: // If user's input is not valied, prompt user to type the valid input.
                     System.out.println("Invalid input, please try again. \n");
                     break;

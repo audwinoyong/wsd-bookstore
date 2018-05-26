@@ -27,7 +27,7 @@ public class BookService {
         // time that we are manipulating it, otherwise bad things could happen.
         //
         // The "synchronized" keyword is used to lock the application object while
-        // we're manpulating it.
+        // we're manipulating it.
         synchronized (application) {
             BookApplication bookApp = (BookApplication) application.getAttribute("bookApp");
             if (bookApp == null) {
