@@ -53,6 +53,7 @@
                                     <option value="" disabled selected>Choose by:</option>
                                     <option value="booktitle">Book Title</option>
                                     <option value="username">Username</option>
+                                    <option value="Available">Available Only</option>
                                 </select>
                             </td>
                             <td>

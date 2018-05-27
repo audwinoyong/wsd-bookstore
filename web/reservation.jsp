@@ -24,7 +24,7 @@
         String resultPath = application.getRealPath("WEB-INF/result3.xml");
     %>
 
-    <jsp:useBean id="reservationApp" class="uts.wsd.ReservationApplication" scope="application">
+    <jsp:useBean id="reservationApp" class="uts.wsd.ReservationApplication" scope="page">
         <jsp:setProperty name="reservationApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
 

@@ -8,8 +8,6 @@
 <%@page import="uts.wsd.User"%>
 <%@page import="uts.wsd.Book"%>
 <%@page import="uts.wsd.Books"%>
-<%@page import="uts.wsd.Reservation"%>
-<%@page import="uts.wsd.Reservations"%>
 <!DOCTYPE html>
 <html>
     <head>
