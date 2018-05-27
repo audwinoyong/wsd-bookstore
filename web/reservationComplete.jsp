@@ -8,6 +8,7 @@
 <%@page import="uts.wsd.Books"%>
 <%@page import="uts.wsd.Reservation"%>
 <%@page import="uts.wsd.Reservations"%>
+<%@page import="uts.wsd.Validator"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,14 +40,30 @@
         String username = request.getParameter("fullName");
         String email = request.getParameter("email");
 
-        Reservation reservation = new Reservation(bookId, booktitle, username, email);
-        Reservations reservations = reservationApp.getReservations();
-        reservations.addReservation(reservation);
-        reservationApp.saveReservations();
+        Validator validator = new Validator();
 
-        //set book's status to "Reserved"
-        bookApp.getBooks().getBookByBookId(bookId).setAvailability("Reserved");
-        bookApp.saveBooks();
+        // Verification of Incorrect Name format
+        if (!validator.validName(username)) {
+            session.setAttribute("nameError", "[Incorrect name format]");
+            response.sendRedirect("reservationForm.jsp?bookId=" + bookId + "&" + "booktitle=" + booktitle);
+            // Verification of Incorrect Email format
+        } else if (!validator.validEmail(email)) {
+            session.setAttribute("emailError", "[Incorrect email format]");
+            response.sendRedirect("reservationForm.jsp?bookId=" + bookId + "&" + "booktitle=" + booktitle);
+        } else {
+            Reservation reservation = new Reservation(bookId, booktitle, username, email);
+            Reservations reservations = reservationApp.getReservations();
+            reservations.addReservation(reservation);
+            reservationApp.saveReservations();
+
+            //set book's status to "Reserved"
+            bookApp.getBooks().getBookByBookId(bookId).setAvailability("Reserved");
+            bookApp.saveBooks();
+            
+            // clear the errors
+            session.setAttribute("nameError", "");
+            session.setAttribute("emailError", "");
+        }
     %>
 
     <body>
