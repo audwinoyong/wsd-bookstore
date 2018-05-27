@@ -19,7 +19,6 @@
                             <th>Book Title</th>
                             <th>Author</th>
                             <th>Category</th>
-                            <!--<th>Number of Books</th>-->
                         </tr>
                     </thead>
                     <tbody>
@@ -44,10 +43,6 @@
             <td>
                 <xsl:value-of select="category"/>
             </td>
-            <!--<td><xsl:value-of select="count(//books[not(Location_ID=preceding-sibling::Artist_by_Country/Location_ID)]/Location_ID)"</td>-->
-<!--            <td class="number">
-                <xsl:value-of select="count(booktitle)"/>
-            </td>-->
         </tr>
     </xsl:template>
 

@@ -46,7 +46,8 @@ public class Books implements Serializable {
         }
         return null;
     }
-
+    
+    // function to get book with matching book ID
     public Book getBookByBookId(int bookId) {
         for (Book book : list) {
             if (book.getBookId() == bookId) { //return a book with matching book ID
@@ -179,34 +180,4 @@ public class Books implements Serializable {
         return newBooks;
     }
 
-//    public int getBooksListCount(Books books) {
-//        Books newBooks = new Books();
-//        ArrayList<Book> storedBooks = books.getBooks();
-//        ArrayList<Book> booklist = newBooks.getBooks();
-//        int size;
-//        boolean match;
-//        int count = 0;
-//        for (Book storedBook : storedBooks) {
-//            String storedBooktitle = storedBook.getBooktitle();
-//            if (booklist.isEmpty()) {
-//                // store the first book with a title.
-//                newBooks.addBook(storedBook);
-//            } else {
-//                size = booklist.size();
-//                // if there is a book with the same title, skip.                          
-//                for (int i = 0; i < size; i++) {
-//                    match = booklist.get(i).getBooktitle().equals(storedBooktitle);
-//                    if (match) {
-//                        count++;
-//                        break;
-//                    } // if there is no book with the same title, add.
-//                    else if (!match && i == size - 1) {
-//                        booklist.add(storedBook);
-//                    }
-//                }
-//            }
-//        }
-//        //return books sorted by titles.
-//        return count;
-//    }
 }

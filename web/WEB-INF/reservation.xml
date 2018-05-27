@@ -4,13 +4,13 @@
     <reservation>
         <bookId>1</bookId>
         <booktitle>Good mates</booktitle>
-        <username>Audwin</username>
-        <email>audwin@gmail.com</email>
+        <username>Audwin Oyong</username>
+        <email>audwin@live.com</email>
     </reservation>
     <reservation>
         <bookId>2</bookId>
         <booktitle>Romeo and Juliet</booktitle>
-        <username>Audwin</username>
-        <email>audwin@gmail.com</email>
+        <username>Audwin Oyong</username>
+        <email>audwin@live.com</email>
     </reservation>
 </reservations>
