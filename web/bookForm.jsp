@@ -72,7 +72,7 @@
                             <td>
                                 <select class="form-control" name="publishYear" id="publishYear" required>
                                     <option value="" disabled selected>Choose publication year</option>
-                                    <!--JavaScript to dynamically populate options of the last 100 years of the current year-->
+                                    <!--JavaScript to dynamically populate options with the last 100 years of the current year-->
                                     <script>
                                         var start = new Date().getFullYear() - 100;
                                         var end = new Date().getFullYear();

@@ -58,6 +58,7 @@ public class BookService {
         ArrayList<Book> resultList = new ArrayList<Book>();
 
         if (username != null && availability != null && condition != null) {
+            // filter by all parameters
             for (Book book : getBookApp().getBooks().getBooks()) {
                 if (username.equalsIgnoreCase(book.getUsername())
                         && availability.equalsIgnoreCase(book.getAvailability())
@@ -66,6 +67,7 @@ public class BookService {
                 }
             }
         } else if (username != null && availability != null) {
+            // filters by username & availability parameters
             for (Book book : getBookApp().getBooks().getBooks()) {
                 if (username.equalsIgnoreCase(book.getUsername())
                         && availability.equalsIgnoreCase(book.getAvailability())) {
@@ -73,6 +75,7 @@ public class BookService {
                 }
             }
         } else if (username != null && condition != null) {
+            // filters by username & condition parameters
             for (Book book : getBookApp().getBooks().getBooks()) {
                 if (username.equalsIgnoreCase(book.getUsername())
                         && condition.equalsIgnoreCase(book.getCondition())) {
@@ -80,6 +83,7 @@ public class BookService {
                 }
             }
         } else if (availability != null && condition != null) {
+            // filters by availability & condition parameters
             for (Book book : getBookApp().getBooks().getBooks()) {
                 if (availability.equalsIgnoreCase(book.getAvailability())
                         && condition.equalsIgnoreCase(book.getCondition())) {
@@ -100,49 +104,52 @@ public class BookService {
             return getBookApp().getBooks();
         }
 
-        //set the list of books with matching filters
+        //set the list of books with the matching filters
         books.setBooks(resultList);
         return books;
     }
 
-//    // Get all books.
-//    @GET
-//    @Path("books")
-//    @Produces(MediaType.APPLICATION_XML)
-//    public Books fetchBooks() throws JAXBException, IOException {
-//        return getBookApp().getBooks();
-//    }
-//
-//    // Get all books filtered by its username.
-//    @GET
-//    @Path("books/username/{username}")
-//    @Produces(MediaType.APPLICATION_XML)
-//    public Books getBooksByUserName(@PathParam("username") String username) throws Exception {
-//        return getBookApp().getBooks().getBooklistByUsername(username);
-//    }
-//
-//    // Get all books filtered by its status.
-//    @GET
-//    @Path("books/availability/{availability}")
-//    @Produces(MediaType.APPLICATION_XML)
-//    public Books getBooksByAvailability(@PathParam("availability") String availability) throws Exception {
-//        return getBookApp().getBooks().getAvailability(availability);
-//    }
-//
-//    // Get all books filtered by its condition.
-//    @GET
-//    @Path("books/condition/{condition}")
-//    @Produces(MediaType.APPLICATION_XML)
-//    public Books getBooksByCondition(@PathParam("condition") String condition) throws Exception {
-//        return getBookApp().getBooks().getCondition(condition);
-//    }
-//
-//    // Get all books filtered by its title.
-//    @GET
-//    @Path("books/title/{title}")
-//    @Produces(MediaType.APPLICATION_XML)
-//    public Books getBooksByTitle(@PathParam("title") String title) throws JAXBException, IOException {
-//        return getBookApp().getBooks().getBooklistByTitle(title);
-//    }
+    /* 
+     * // Alternative ways using path parameters (PathParam), only for single filter.
+ 
+    // Get all books.
+    @GET
+    @Path("books")
+    @Produces(MediaType.APPLICATION_XML)
+    public Books fetchBooks() throws JAXBException, IOException {
+        return getBookApp().getBooks();
+    }
 
+    // Get all books filtered by its username.
+    @GET
+    @Path("books/username/{username}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Books getBooksByUserName(@PathParam("username") String username) throws Exception {
+        return getBookApp().getBooks().getBooklistByUsername(username);
+    }
+
+    // Get all books filtered by its status.
+    @GET
+    @Path("books/availability/{availability}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Books getBooksByAvailability(@PathParam("availability") String availability) throws Exception {
+        return getBookApp().getBooks().getAvailability(availability);
+    }
+
+    // Get all books filtered by its condition.
+    @GET
+    @Path("books/condition/{condition}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Books getBooksByCondition(@PathParam("condition") String condition) throws Exception {
+        return getBookApp().getBooks().getCondition(condition);
+    }
+
+    // Get all books filtered by its title.
+    @GET
+    @Path("books/title/{title}")
+    @Produces(MediaType.APPLICATION_XML)
+    public Books getBooksByTitle(@PathParam("title") String title) throws JAXBException, IOException {
+        return getBookApp().getBooks().getBooklistByTitle(title);
+    }
+     */
 }
