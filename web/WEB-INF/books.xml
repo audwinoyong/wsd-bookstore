@@ -5,65 +5,65 @@
         <bookId>1</bookId>
         <booktitle>Good mates</booktitle>
         <author>Author Choi</author>
-        <category>Science fiction</category>
+        <category>Science Fiction</category>
         <condition>New</condition>
         <isbn>1-23451-234-5</isbn>
         <publishYear>2018</publishYear>
         <publisher>Jimmy Rhee</publisher>
         <username>kevin</username>
-        <abstract>Abstract is abstract.</abstract>
+        <abstract>A tale of good mates.</abstract>
         <availability>Reserved</availability>
     </book>
     <book>
         <bookId>2</bookId>
         <booktitle>Romeo and Juliet</booktitle>
-        <author>Author Choi</author>
-        <category>Science fiction</category>
+        <author>William Shakespeare</author>
+        <category>Romance</category>
         <condition>New</condition>
-        <isbn>1-23451-234-5</isbn>
-        <publishYear>2018</publishYear>
+        <isbn>2-34567-789-1</isbn>
+        <publishYear>1985</publishYear>
         <publisher>Jimmy Rhee</publisher>
         <username>kevin</username>
-        <abstract>Abstract is abstract.</abstract>
+        <abstract>A legendary love story.</abstract>
         <availability>Reserved</availability>
     </book>
     <book>
         <bookId>3</bookId>
         <booktitle>Romeo and Juliet</booktitle>
-        <author>Author Choi</author>
-        <category>Science fiction</category>
+        <author>William Shakespeare</author>
+        <category>Romance</category>
         <condition>Good</condition>
-        <isbn>1-23451-234-5</isbn>
-        <publishYear>2018</publishYear>
+        <isbn>2-34567-789-1</isbn>
+        <publishYear>1985</publishYear>
         <publisher>Jimmy Rhee</publisher>
         <username>kevin</username>
-        <abstract>Abstract is abstract.</abstract>
+        <abstract>A legendary love story.</abstract>
         <availability>Available</availability>
     </book>
     <book>
         <bookId>4</bookId>
         <booktitle>Good mates</booktitle>
         <author>Author Choi</author>
-        <category>Science fiction</category>
+        <category>Science Fiction</category>
         <condition>Fair</condition>
         <isbn>1-23451-234-5</isbn>
         <publishYear>2018</publishYear>
         <publisher>Jimmy Rhee</publisher>
         <username>jimmy</username>
-        <abstract>Abstract is abstract.</abstract>
+        <abstract>A tale of good mates.</abstract>
         <availability>Available</availability>
     </book>
     <book>
         <bookId>5</bookId>
         <booktitle>Triangle</booktitle>
-        <author>Author Choi</author>
-        <category>Science fiction</category>
+        <author>Mac Barnett</author>
+        <category>Picture Books</category>
         <condition>Poor</condition>
-        <isbn>1-23451-234-5</isbn>
-        <publishYear>2018</publishYear>
+        <isbn>3-95231-883-7</isbn>
+        <publishYear>1990</publishYear>
         <publisher>Jimmy Rhee</publisher>
         <username>kevin</username>
-        <abstract>Abstract is abstract.</abstract>
+        <abstract>Meet Triangle, a geometry shape.</abstract>
         <availability>Available</availability>
     </book>
 </books>

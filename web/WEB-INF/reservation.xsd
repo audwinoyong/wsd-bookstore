@@ -15,7 +15,7 @@
     </xs:simpleType>
     <xs:simpleType name="username">
         <xs:restriction base="xs:string">
-            <xs:pattern value="([A-Za-z0-9]*)+"/>
+            <xs:pattern value="[a-zA-Z]*(\s[a-zA-Z]*)*"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="email">
