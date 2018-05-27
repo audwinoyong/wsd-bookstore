@@ -45,7 +45,7 @@
                 session.setAttribute("emailError", "[Incorrect email format]");
                 response.sendRedirect("login.jsp");
 
-                // Verification of Password format
+                // Verification of Incorrect Password format
             } else if (!validator.validPassword(password)) {
                 session.setAttribute("passwordError", "[Incorrect password format]");
                 response.sendRedirect("login.jsp");
