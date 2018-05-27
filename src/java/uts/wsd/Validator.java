@@ -11,9 +11,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * This class provides validation of the inputs within the login and register
- * forms. Regular expressions from the XML Schema's are used for validating the
- * inputs before being saved into the XMLs.
+ * This class provides validation of the inputs within the login, register,
+ * reservation and book listing forms. Regular expressions from the XML Schema's
+ * are used for validating the inputs before being saved into the XMLs.
  *
  * @author Audwin
  */
@@ -34,6 +34,14 @@ public class Validator implements Serializable {
 
     // Date of Birth is in "yyyy-mm-dd" format
     private String dobPattern = "\\d{4}-\\d{2}-\\d{2}";
+
+    // ISBN must be 10 digits, separated by hyphens. Format examples:
+    // 1-12345-123-1
+    // 1-123-12345-1
+    // 1-12-123456-1
+    private String isbnPattern = "\\d{1}-\\d{5}-\\d{3}-\\d{1}" + "|"
+                               + "\\d{1}-\\d{3}-\\d{5}-\\d{1}" + "|"
+                               + "\\d{1}-\\d{2}-\\d{6}-\\d{1}";
 
     public Validator() {
     }
@@ -66,5 +74,9 @@ public class Validator implements Serializable {
 
     public boolean validDob(String dob) {
         return validate(dobPattern, dob);
+    }
+
+    public boolean validIsbn(String isbn) {
+        return validate(isbnPattern, isbn);
     }
 }

@@ -39,7 +39,9 @@
     </xs:simpleType>
     <xs:simpleType name="isbn">
         <xs:restriction base="xs:string">
-            <xs:pattern value="\d{1}-\d{5}-\d{3}-\d{1}|\d{1}-\d{3}-\d{5}-\d{1}|\d{1}-\d{2}-\d{6}-\d{1}"/>
+            <xs:pattern value="\d{1}-\d{5}-\d{3}-\d{1}|
+                               \d{1}-\d{3}-\d{5}-\d{1}|
+                               \d{1}-\d{2}-\d{6}-\d{1}"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="year">

@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,6 +18,9 @@
     </head>
 
     <jsp:include page="navbar.jsp"/>
+    <%
+        String isbnError = request.getParameter("isbnError");
+    %>
     <body>
     <center>
         <div class="container">
@@ -30,6 +34,10 @@
 
             <div class="wrapper" style="width: 500px; text-align: left">
                 <form action="booklistComplete.jsp" method="POST">
+                    
+                    <!-- Validation input error message, if exists -->
+                    <c:if test="${isbnError != null}"> <p style="color: red; font-weight: bold; text-align: center"> <c:out value="${isbnError}"/></p> </c:if>
+                    
                     <table align="center">
                         <tr>
                             <td>Book Title:</td>
@@ -64,7 +72,7 @@
                         <tr>
                             <td>ISBN:</td>
                             <td>
-                                <input name="isbn" type="text" class="form-control" required>
+                                <input name="isbn" type="text" maxlength="13" class="form-control" required>
                             </td>
                         </tr>
                         <tr>
@@ -72,7 +80,7 @@
                             <td>
                                 <select class="form-control" name="publishYear" id="publishYear" required>
                                     <option value="" disabled selected>Choose publication year</option>
-                                    <!--JavaScript to dynamically populate options with the last 100 years of the current year-->
+                                    <!-- JavaScript to dynamically populate options with the last 100 years of the current year -->
                                     <script>
                                         var start = new Date().getFullYear() - 100;
                                         var end = new Date().getFullYear();
@@ -95,7 +103,6 @@
                                 <input name="abst" type="text" class="form-control" required>
                             </td>
                         </tr>
-                        <tr>
 
                         <tr>
                             <td align="center"><input type="button" class="btn btn-warning btn-sm" value="Go Back!" onclick="history.back(-1)" />

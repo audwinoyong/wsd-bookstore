@@ -8,6 +8,7 @@
 <%@page import="uts.wsd.User"%>
 <%@page import="uts.wsd.Book"%>
 <%@page import="uts.wsd.Books"%>
+<%@page import="uts.wsd.Validator"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +28,7 @@
     </jsp:useBean>
 
     <%
-        //List a new book with information filled by lister from previous page(booklist.jsp)
+        // List a new book with information filled by lister from previous page (booklist.jsp)
         User user = (User) session.getAttribute("user");
         String booktitle = request.getParameter("booktitle");
         String author = request.getParameter("author");
@@ -39,11 +40,21 @@
         String username = user.getName();
         String abst = request.getParameter("abst");
 
-        //create new book with corresponding details and save it to xml.
-        Book book = new Book(booktitle, author, category, condition, isbn, publishYear, publisher, username, abst);
-        bookApp.getBooks().addBook(book);
-        bookApp.saveBooks();
+        Validator validator = new Validator();
 
+        // Verification of Incorrect ISBN format
+        if (!validator.validIsbn(isbn)) {
+            session.setAttribute("isbnError", "[Incorrect ISBN format]");
+            response.sendRedirect("bookForm.jsp");
+        } else {
+            // create new book with corresponding details and save it to xml.
+            Book book = new Book(booktitle, author, category, condition, isbn, publishYear, publisher, username, abst);
+            bookApp.getBooks().addBook(book);
+            bookApp.saveBooks();
+
+            // clear the errors
+            session.setAttribute("isbnError", "");
+        }
     %>
     <body>
     <center>
