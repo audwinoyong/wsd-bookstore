@@ -155,7 +155,7 @@ public class BookSOAP {
             String filepath = getBookApp().getFilePath();
             getBookApp().updateXML(books, filepath);
             return book;
-            
+
         } catch (Exception e) {
             System.out.println("error");
             return null;
@@ -192,7 +192,7 @@ public class BookSOAP {
         }
     }
 
-    // List a new book with details filled.
+    // Reserve a particular book, add the reservation and set the status of the book to "Reserved"
     @WebMethod()
     public Reservation addReservation(int bookId, String booktitle, String username, String email) {
         try {
@@ -202,6 +202,10 @@ public class BookSOAP {
 
             String filepath = getReservationApp().getFilePath();
             getReservationApp().updateXML(reservations, filepath);
+
+            getBookApp().getBooks().getBookByBookId(bookId).setAvailability("Reserved");
+            getBookApp().saveBooks();
+
             return reservation;
 
         } catch (Exception e) {

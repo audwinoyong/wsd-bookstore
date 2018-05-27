@@ -109,9 +109,9 @@ public class BookSOAPClient {
                     }
                     break;
 
-                case "b": // Ask Lister for book information and add the book to the list.
+                case "b": // Ask Lister for book to reserve and add the reservation
                     if (user != null) {
-                        System.out.println("Enter the Book id you wish to reserve");
+                        System.out.println("Enter the Book ID you wish to reserve");
                         int bookId = scanner.nextInt();
                         scanner.nextLine();
                         String booktitle = bookSOAP.getBookByBookId(bookId).getBooktitle();
@@ -119,8 +119,8 @@ public class BookSOAPClient {
                         username = user.getName();
                         email = user.getEmail();
 
-                        System.out.println("Book has been reserved successfully");
                         bookSOAP.addReservation(bookId, booktitle, username, email);
+                        System.out.println("Book has been reserved successfully");
                     }
                     break;
 
