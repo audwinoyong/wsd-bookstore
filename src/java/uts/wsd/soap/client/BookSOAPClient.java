@@ -127,8 +127,9 @@ public class BookSOAPClient {
                 case "d": // Delete a book by its book ID.
                     if (user != null) {
                         System.out.println("Enter the book ID you want to delete:");
-                        String title = scanner.nextLine();
-                        bookSOAP.deleteBook(title);
+                        int bookId = scanner.nextInt();
+                        scanner.nextLine();
+                        bookSOAP.deleteBook(bookId);
                         System.out.println("Book is deleted successfully");
                     }
                     break;

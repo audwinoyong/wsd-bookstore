@@ -164,10 +164,10 @@ public class BookSOAP {
 
     // Delete a book from the list by its book ID.
     @WebMethod()
-    public Book deleteBook(String bookId) {
+    public Book deleteBook(int bookId) {
         try {
             Books books = getBookApp().getBooks();
-            Book book = books.getBookByTitle(bookId);
+            Book book = books.getBookByBookId(bookId);
             books.removeBook(book);
 
             String filepath = getBookApp().getFilePath();
